@@ -1,22 +1,71 @@
 // Sections are plain components so they can move to Next.js App Router
 // (app/page.tsx + components/*) without changes.
+import { useEffect, useState } from 'react'
 
-const caseStudies = [
-  {
-    slug: 'case-study-one',
-    title: 'TODO: Case study title',
-    summary: 'TODO: One-line summary of the problem and outcome.',
-    tags: ['Product design', 'Research'],
-    year: '2025',
-  },
-  {
-    slug: 'case-study-two',
-    title: 'TODO: Case study title',
-    summary: 'TODO: One-line summary of the problem and outcome.',
-    tags: ['Design systems', 'UI'],
-    year: '2024',
-  },
+type CaseStudy = {
+  slug: string
+  title: string
+  summary: string
+  tags: string[]
+  year: string
+  featured?: boolean
+}
+
+const caseStudies: CaseStudy[] = [
+  { slug: 'case-study-one', title: 'TODO: Case study title', summary: 'TODO: One-line summary of the problem and outcome.', tags: ['Product design', 'Research'], year: '2025', featured: true },
+  { slug: 'case-study-two', title: 'TODO: Case study title', summary: 'TODO: One-line summary of the problem and outcome.', tags: ['Design systems', 'UI'], year: '2024', featured: true },
+  { slug: 'case-study-three', title: 'TODO: Case study title', summary: 'TODO: One-line summary of the problem and outcome.', tags: ['Mobile', 'UX'], year: '2024' },
+  { slug: 'case-study-four', title: 'TODO: Case study title', summary: 'TODO: One-line summary of the problem and outcome.', tags: ['Web', 'Branding'], year: '2023' },
+  { slug: 'case-study-five', title: 'TODO: Case study title', summary: 'TODO: One-line summary of the problem and outcome.', tags: ['Dashboard', 'Data'], year: '2023' },
+  { slug: 'case-study-six', title: 'TODO: Case study title', summary: 'TODO: One-line summary of the problem and outcome.', tags: ['Prototyping', 'Research'], year: '2022' },
 ]
+
+function useRoute() {
+  const [hash, setHash] = useState(() => window.location.hash)
+  useEffect(() => {
+    const onChange = () => setHash(window.location.hash)
+    window.addEventListener('hashchange', onChange)
+    return () => window.removeEventListener('hashchange', onChange)
+  }, [])
+  return hash
+}
+
+function WorkCard({ c }: { c: CaseStudy }) {
+  return (
+    <a href={`#${c.slug}`} className="group block">
+      <div className="flex aspect-[4/3] items-center justify-center overflow-hidden rounded-3xl bg-neutral-100 text-sm text-neutral-400 transition group-hover:bg-neutral-200">
+        TODO: Cover image
+      </div>
+      <div className="mt-5 flex items-start justify-between gap-4">
+        <div>
+          <h3 className="text-xl font-semibold tracking-tight">{c.title}</h3>
+          <p className="mt-1 text-neutral-600">{c.summary}</p>
+          <div className="mt-3 flex flex-wrap gap-2">
+            {c.tags.map((t) => (
+              <span key={t} className="rounded-full border border-neutral-200 px-3 py-1 text-xs text-neutral-600">{t}</span>
+            ))}
+          </div>
+        </div>
+        <span className="text-sm text-neutral-400">{c.year}</span>
+      </div>
+    </a>
+  )
+}
+
+function AllWorks() {
+  return (
+    <section className="mx-auto max-w-6xl px-6 pb-24 pt-16 md:pt-24">
+      <a href="#" className="text-sm text-neutral-500 hover:text-neutral-950">← Back home</a>
+      <div className="mb-12 mt-6 flex items-end justify-between border-b border-neutral-200 pb-6">
+        <h1 className="text-5xl font-semibold leading-[0.95] tracking-[-0.04em] md:text-8xl">All works</h1>
+        <span className="text-sm text-neutral-500">0{caseStudies.length} projects</span>
+      </div>
+      <div className="grid gap-x-10 gap-y-16 md:grid-cols-2">
+        {caseStudies.map((c) => <WorkCard key={c.slug} c={c} />)}
+      </div>
+    </section>
+  )
+}
 
 function Nav() {
   return (
@@ -67,28 +116,10 @@ function Work() {
     <section id="work" className="mx-auto max-w-6xl px-6 py-24">
       <div className="mb-12 flex items-end justify-between border-b border-neutral-200 pb-6">
         <h2 className="text-3xl font-semibold tracking-tight md:text-5xl">Selected work</h2>
-        <span className="text-sm text-neutral-500">0{caseStudies.length} projects</span>
+        <a href="#/work" className="text-sm font-medium text-neutral-600 hover:text-neutral-950">All works →</a>
       </div>
       <div className="grid gap-10 md:grid-cols-2">
-        {caseStudies.map((c) => (
-          <a key={c.slug} href={`#${c.slug}`} className="group block">
-            <div className="flex aspect-[4/3] items-center justify-center overflow-hidden rounded-3xl bg-neutral-100 text-sm text-neutral-400 transition group-hover:bg-neutral-200">
-              TODO: Cover image
-            </div>
-            <div className="mt-5 flex items-start justify-between gap-4">
-              <div>
-                <h3 className="text-xl font-semibold tracking-tight">{c.title}</h3>
-                <p className="mt-1 text-neutral-600">{c.summary}</p>
-                <div className="mt-3 flex gap-2">
-                  {c.tags.map((t) => (
-                    <span key={t} className="rounded-full border border-neutral-200 px-3 py-1 text-xs text-neutral-600">{t}</span>
-                  ))}
-                </div>
-              </div>
-              <span className="text-sm text-neutral-400">{c.year}</span>
-            </div>
-          </a>
-        ))}
+        {caseStudies.filter((c) => c.featured).map((c) => <WorkCard key={c.slug} c={c} />)}
       </div>
     </section>
   )
@@ -125,12 +156,29 @@ function Contact() {
 }
 
 export default function App() {
+  const hash = useRoute()
+  const isAllWorks = hash.startsWith('#/work')
+
+  useEffect(() => {
+    if (isAllWorks || !hash || hash === '#') {
+      window.scrollTo(0, 0)
+      return
+    }
+    document.getElementById(hash.slice(1))?.scrollIntoView()
+  }, [hash, isAllWorks])
+
   return (
     <main>
       <Nav />
-      <Hero />
-      <Work />
-      <About />
+      {isAllWorks ? (
+        <AllWorks />
+      ) : (
+        <>
+          <Hero />
+          <Work />
+          <About />
+        </>
+      )}
       <Contact />
     </main>
   )
