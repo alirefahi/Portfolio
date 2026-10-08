@@ -1,0 +1,12 @@
+{
+  "title": "Ali Refahi",
+  "description": "Product design portfolio designed for showcase work.",
+  "language": "en",
+  "robots": {
+    "index": false
+  },
+  "accessibility": {
+    "addBypassLinks": false,
+    "ignoreReducedMotion": false
+  }
+}
