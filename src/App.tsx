@@ -2,23 +2,9 @@
 // (app/page.tsx + components/*) without changes.
 import { useEffect, useState } from 'react'
 
-type CaseStudy = {
-  slug: string
-  title: string
-  summary: string
-  tags: string[]
-  year: string
-  featured?: boolean
-}
-
-const caseStudies: CaseStudy[] = [
-  { slug: 'case-study-one', title: 'TODO: Case study title', summary: 'TODO: One-line summary of the problem and outcome.', tags: ['Product design', 'Research'], year: '2025', featured: true },
-  { slug: 'case-study-two', title: 'TODO: Case study title', summary: 'TODO: One-line summary of the problem and outcome.', tags: ['Design systems', 'UI'], year: '2024', featured: true },
-  { slug: 'case-study-three', title: 'TODO: Case study title', summary: 'TODO: One-line summary of the problem and outcome.', tags: ['Mobile', 'UX'], year: '2024' },
-  { slug: 'case-study-four', title: 'TODO: Case study title', summary: 'TODO: One-line summary of the problem and outcome.', tags: ['Web', 'Branding'], year: '2023' },
-  { slug: 'case-study-five', title: 'TODO: Case study title', summary: 'TODO: One-line summary of the problem and outcome.', tags: ['Dashboard', 'Data'], year: '2023' },
-  { slug: 'case-study-six', title: 'TODO: Case study title', summary: 'TODO: One-line summary of the problem and outcome.', tags: ['Prototyping', 'Research'], year: '2022' },
-]
+import { works as caseStudies } from './content/works'
+import WorkCard from './components/work/WorkCard'
+import WorkDetail from './pages/WorkDetail'
 
 function useRoute() {
   const [hash, setHash] = useState(() => window.location.hash)
@@ -28,28 +14,6 @@ function useRoute() {
     return () => window.removeEventListener('hashchange', onChange)
   }, [])
   return hash
-}
-
-function WorkCard({ c }: { c: CaseStudy }) {
-  return (
-    <a href={`#${c.slug}`} className="group block">
-      <div className="flex aspect-[4/3] items-center justify-center overflow-hidden rounded-3xl bg-neutral-100 text-sm text-neutral-400 transition group-hover:bg-neutral-200">
-        TODO: Cover image
-      </div>
-      <div className="mt-5 flex items-start justify-between gap-4">
-        <div>
-          <h3 className="text-xl font-semibold tracking-tight">{c.title}</h3>
-          <p className="mt-1 text-neutral-600">{c.summary}</p>
-          <div className="mt-3 flex flex-wrap gap-2">
-            {c.tags.map((t) => (
-              <span key={t} className="rounded-full border border-neutral-200 px-3 py-1 text-xs text-neutral-600">{t}</span>
-            ))}
-          </div>
-        </div>
-        <span className="text-sm text-neutral-400">{c.year}</span>
-      </div>
-    </a>
-  )
 }
 
 function AllWorks() {
@@ -137,7 +101,7 @@ function About() {
 }
 
 // Set to a PDF path (e.g. '/ali-refahi-resume.pdf') to show the download link.
-const resumeUrl: string | null = null
+const resumeUrl: string | null = '/ali-refahi-resume.pdf'
 
 const experience = [
   { role: 'TODO: Role', company: 'TODO: Company', years: '2023 — Now' },
@@ -216,13 +180,13 @@ function Contact() {
     <footer id="contact" className="mx-auto max-w-6xl px-6 pb-12 pt-24">
       <div className="rounded-3xl bg-neutral-950 px-8 py-16 text-white md:px-16 md:py-24">
         <p className="text-sm uppercase tracking-[0.2em] text-neutral-400">Contact</p>
-        <a href="mailto:TODO@example.com" className="mt-6 block text-4xl font-semibold tracking-[-0.03em] hover:text-neutral-300 md:text-7xl">
+        <a href="mailto:arefahi26@gmail.com" className="mt-6 block text-4xl font-semibold tracking-[-0.03em] hover:text-neutral-300 md:text-7xl">
           Let's work together →
         </a>
-        <div className="mt-12 flex gap-6 text-sm text-neutral-400">
-          <a href="#" className="hover:text-white">TODO: LinkedIn</a>
-          <a href="#" className="hover:text-white">TODO: Dribbble</a>
-          <a href="#" className="hover:text-white">TODO: Résumé</a>
+        <div className="mt-12 flex flex-wrap gap-6 text-sm text-neutral-400">
+          <a href="mailto:arefahi26@gmail.com" className="hover:text-white">arefahi26@gmail.com</a>
+          <a href="https://www.linkedin.com/in/alirefahi" target="_blank" rel="noreferrer" className="hover:text-white">LinkedIn ↗</a>
+          <a href="/ali-refahi-resume.pdf" download className="hover:text-white">Résumé ↓</a>
         </div>
       </div>
       <p className="mt-8 text-sm text-neutral-400">© {new Date().getFullYear()} Ali Refahi</p>
@@ -232,21 +196,32 @@ function Contact() {
 
 export default function App() {
   const hash = useRoute()
-  const isAllWorks = hash.startsWith("#/works")
+  const detailSlug = hash.startsWith('#/works/') ? hash.slice('#/works/'.length) : null
+  const isAllWorks = !detailSlug && hash.startsWith('#/works')
   const isAbout = hash.startsWith('#/about')
+  const isPage = !!detailSlug || isAllWorks || isAbout
 
+  // Remember scroll per route so Back returns to the same spot.
   useEffect(() => {
-    if (isAllWorks || isAbout || !hash || hash === '#') {
-      window.scrollTo(0, 0)
-      return
+    if ('scrollRestoration' in history) history.scrollRestoration = 'manual'
+    const key = `scroll:${hash || '#'}`
+    const saved = sessionStorage.getItem(key)
+    if (isPage || !hash || hash === '#') {
+      window.scrollTo(0, saved ? Number(saved) : 0)
+    } else {
+      document.getElementById(hash.slice(1))?.scrollIntoView()
     }
-    document.getElementById(hash.slice(1))?.scrollIntoView()
-  }, [hash, isAllWorks, isAbout])
+    const save = () => sessionStorage.setItem(key, String(window.scrollY))
+    window.addEventListener('scroll', save, { passive: true })
+    return () => window.removeEventListener('scroll', save)
+  }, [hash, isPage])
 
   return (
     <main>
       <Nav />
-      {isAllWorks ? (
+      {detailSlug ? (
+        <WorkDetail slug={detailSlug} />
+      ) : isAllWorks ? (
         <AllWorks />
       ) : isAbout ? (
         <AboutPage />
