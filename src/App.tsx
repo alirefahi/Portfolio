@@ -57,7 +57,7 @@ function AllWorks() {
     <section className="mx-auto max-w-6xl px-6 pb-24 pt-16 md:pt-24">
       <a href="#" className="text-sm text-neutral-500 hover:text-neutral-950">← Back home</a>
       <div className="mb-12 mt-6 flex items-end justify-between border-b border-neutral-200 pb-6">
-        <h1 className="text-5xl font-semibold leading-[0.95] tracking-[-0.04em] md:text-8xl">All works</h1>
+        <h1 className="text-5xl font-semibold leading-[0.95] tracking-[-0.04em] md:text-8xl">Works</h1>
         <span className="text-sm text-neutral-500">0{caseStudies.length} projects</span>
       </div>
       <div className="grid gap-x-10 gap-y-16 md:grid-cols-2">
@@ -74,8 +74,8 @@ function Nav() {
         Ali Refahi
       </a>
       <nav className="flex gap-8 text-sm text-neutral-600">
-        <a href="#work" className="hover:text-neutral-950">Work</a>
-        <a href="#about" className="hover:text-neutral-950">About</a>
+        <a href="#/works" className="hover:text-neutral-950">Works</a>
+        <a href="#/about" className="hover:text-neutral-950">About</a>
         <a href="#contact" className="hover:text-neutral-950">Contact</a>
       </nav>
     </header>
@@ -116,7 +116,7 @@ function Work() {
     <section id="work" className="mx-auto max-w-6xl px-6 py-24">
       <div className="mb-12 flex items-end justify-between border-b border-neutral-200 pb-6">
         <h2 className="text-3xl font-semibold tracking-tight md:text-5xl">Selected work</h2>
-        <a href="#/work" className="text-sm font-medium text-neutral-600 hover:text-neutral-950">All works →</a>
+        <a href="#/works" className="text-sm font-medium text-neutral-600 hover:text-neutral-950">All works →</a>
       </div>
       <div className="grid gap-10 md:grid-cols-2">
         {caseStudies.filter((c) => c.featured).map((c) => <WorkCard key={c.slug} c={c} />)}
@@ -132,6 +132,81 @@ function About() {
       <p className="text-2xl leading-snug tracking-tight text-neutral-700 md:text-3xl">
         TODO: A few sentences about your background, approach, and what you're looking for next.
       </p>
+    </section>
+  )
+}
+
+// Set to a PDF path (e.g. '/ali-refahi-resume.pdf') to show the download link.
+const resumeUrl: string | null = null
+
+const experience = [
+  { role: 'TODO: Role', company: 'TODO: Company', years: '2023 — Now' },
+  { role: 'TODO: Role', company: 'TODO: Company', years: '2020 — 2023' },
+  { role: 'TODO: Role', company: 'TODO: Company', years: '2018 — 2020' },
+]
+
+const principles = [
+  { title: 'Start with people', body: 'TODO: How research and empathy shape your work.' },
+  { title: 'Prototype early', body: 'TODO: How you test ideas quickly and learn.' },
+  { title: 'Sweat the details', body: 'TODO: How craft and polish fit your process.' },
+]
+
+const tools = ['Figma', 'FigJam', 'Framer', 'Protopie', 'Notion', 'Maze', 'HTML/CSS', 'React']
+
+function AboutPage() {
+  return (
+    <section className="mx-auto max-w-6xl px-6 pb-24 pt-16 md:pt-24">
+      <a href="#" className="text-sm text-neutral-500 hover:text-neutral-950">← Back home</a>
+      <div className="mt-6 grid gap-12 border-b border-neutral-200 pb-16 md:grid-cols-[1.4fr_1fr] md:items-end">
+        <div>
+          <h1 className="text-5xl font-semibold leading-[0.95] tracking-[-0.04em] md:text-8xl">About me</h1>
+          <p className="mt-8 max-w-xl text-2xl leading-snug tracking-tight text-neutral-700">
+            TODO: Who Ali is — background, focus, and what drives the work.
+          </p>
+          {resumeUrl && (
+            <a href={resumeUrl} download className="mt-10 inline-block rounded-full bg-neutral-950 px-6 py-3 text-sm font-medium text-white transition hover:bg-neutral-800">
+              Download résumé ↓
+            </a>
+          )}
+        </div>
+        <div className="flex aspect-[4/5] items-center justify-center rounded-3xl bg-neutral-100 text-sm text-neutral-400">
+          TODO: Portrait photo
+        </div>
+      </div>
+
+      <div className="grid gap-10 border-b border-neutral-200 py-16 md:grid-cols-[1fr_2fr]">
+        <h2 className="text-3xl font-semibold tracking-tight md:text-4xl">How I work</h2>
+        <div className="grid gap-8 sm:grid-cols-3">
+          {principles.map((p, i) => (
+            <div key={p.title}>
+              <span className="text-sm text-neutral-400">0{i + 1}</span>
+              <h3 className="mt-2 text-lg font-semibold tracking-tight">{p.title}</h3>
+              <p className="mt-2 text-neutral-600">{p.body}</p>
+            </div>
+          ))}
+        </div>
+      </div>
+
+      <div className="grid gap-10 border-b border-neutral-200 py-16 md:grid-cols-[1fr_2fr]">
+        <h2 className="text-3xl font-semibold tracking-tight md:text-4xl">Experience</h2>
+        <ul className="divide-y divide-neutral-200">
+          {experience.map((e, i) => (
+            <li key={i} className="flex flex-wrap items-baseline justify-between gap-2 py-5 first:pt-0">
+              <span className="text-lg font-semibold tracking-tight">{e.role} <span className="font-normal text-neutral-500">· {e.company}</span></span>
+              <span className="text-sm text-neutral-400">{e.years}</span>
+            </li>
+          ))}
+        </ul>
+      </div>
+
+      <div className="grid gap-10 py-16 md:grid-cols-[1fr_2fr]">
+        <h2 className="text-3xl font-semibold tracking-tight md:text-4xl">Tools</h2>
+        <div className="flex flex-wrap gap-3">
+          {tools.map((t) => (
+            <span key={t} className="rounded-full border border-neutral-200 px-4 py-2 text-sm text-neutral-700">{t}</span>
+          ))}
+        </div>
+      </div>
     </section>
   )
 }
@@ -157,21 +232,24 @@ function Contact() {
 
 export default function App() {
   const hash = useRoute()
-  const isAllWorks = hash.startsWith('#/work')
+  const isAllWorks = hash.startsWith("#/works")
+  const isAbout = hash.startsWith('#/about')
 
   useEffect(() => {
-    if (isAllWorks || !hash || hash === '#') {
+    if (isAllWorks || isAbout || !hash || hash === '#') {
       window.scrollTo(0, 0)
       return
     }
     document.getElementById(hash.slice(1))?.scrollIntoView()
-  }, [hash, isAllWorks])
+  }, [hash, isAllWorks, isAbout])
 
   return (
     <main>
       <Nav />
       {isAllWorks ? (
         <AllWorks />
+      ) : isAbout ? (
+        <AboutPage />
       ) : (
         <>
           <Hero />
