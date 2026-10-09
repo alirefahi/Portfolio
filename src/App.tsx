@@ -89,7 +89,7 @@ function Hero() {
         <p className="mb-6 text-sm font-medium uppercase tracking-[0.2em] text-neutral-500">
           TODO: Role · Location
         </p>
-        <h1 className="text-5xl font-semibold leading-[0.95] tracking-[-0.04em] md:text-8xl">
+        <h1 className="text-5xl font-black leading-[0.95] tracking-[-0.04em] md:text-8xl">
           Designing products people love to use.
         </h1>
         <p className="mt-8 max-w-md text-lg leading-relaxed text-neutral-600">
