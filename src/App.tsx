@@ -103,10 +103,12 @@ function About() {
 // Set to a PDF path (e.g. '/ali-refahi-resume.pdf') to show the download link.
 const resumeUrl: string | null = '/ali-refahi-resume.pdf'
 
-const experience = [
-  { role: 'TODO: Role', company: 'TODO: Company', years: '2023 — Now' },
-  { role: 'TODO: Role', company: 'TODO: Company', years: '2020 — 2023' },
-  { role: 'TODO: Role', company: 'TODO: Company', years: '2018 — 2020' },
+// Add a company URL to make its link icon clickable.
+const experience: { role: string; company: string; years: string; duration: string; url?: string }[] = [
+  { role: 'Product Designer', company: 'SabaPardazesh PJS Co.', years: 'Sep 2023 — Present', duration: '2 yrs 11 mos' },
+  { role: 'UI/UX Designer', company: 'Freelance', years: 'Feb 2022 — Jun 2023', duration: '1 yr 4 mos' },
+  { role: 'UI/UX Designer', company: 'Doctop', years: 'Jul 2021 — Jan 2022', duration: '7 mos' },
+  { role: 'UI/UX Designer', company: 'The Dexign Studio · Internship', years: 'Jan 2021 — Apr 2021', duration: '4 mos' },
 ]
 
 const principles = [
@@ -156,8 +158,17 @@ function AboutPage() {
         <ul className="divide-y divide-neutral-200">
           {experience.map((e, i) => (
             <li key={i} className="flex flex-wrap items-baseline justify-between gap-2 py-5 first:pt-0">
-              <span className="text-lg font-semibold tracking-tight">{e.role} <span className="font-normal text-neutral-500">· {e.company}</span></span>
-              <span className="text-sm text-neutral-400">{e.years}</span>
+              <span className="flex items-center gap-1 text-lg font-semibold tracking-tight">
+                {e.role} <span className="font-normal text-neutral-500">@ {e.company}</span>
+                {e.url ? (
+                  <a href={e.url} target="_blank" rel="noreferrer" aria-label={`${e.company} website`} className="opacity-70 transition hover:opacity-100">
+                    <img src="/assets/dcf7d.svg" alt="" width={16} height={12} />
+                  </a>
+                ) : (
+                  <img src="/assets/dcf7d.svg" alt="" width={16} height={12} className="opacity-40" />
+                )}
+              </span>
+              <span className="text-sm italic text-neutral-500">{e.years} · {e.duration}</span>
             </li>
           ))}
         </ul>
