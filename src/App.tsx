@@ -3,6 +3,8 @@
 import { useEffect, useState } from 'react'
 
 import { works as caseStudies } from './content/works'
+import posthog from './posthog'
+import { portfolioLogs } from './posthog-logs'
 import WorkCard from './components/work/WorkCard'
 import WorkDetail from './pages/WorkDetail'
 
@@ -130,7 +132,15 @@ function AboutPage() {
             TODO: Who Ali is — background, focus, and what drives the work.
           </p>
           {resumeUrl && (
-            <a href={resumeUrl} download className="mt-10 inline-block rounded-full bg-neutral-950 px-6 py-3 text-sm font-medium text-white transition hover:bg-neutral-800">
+            <a
+              href={resumeUrl}
+              download
+              onClick={() => {
+                posthog?.capture('resume_downloaded', { placement: 'about_page' })
+                portfolioLogs.resumeDownloadRequested('about_page')
+              }}
+              className="mt-10 inline-block rounded-full bg-neutral-950 px-6 py-3 text-sm font-medium text-white transition hover:bg-neutral-800"
+            >
               Download résumé ↓
             </a>
           )}
@@ -191,13 +201,39 @@ function Contact() {
     <footer id="contact" className="mx-auto max-w-6xl px-6 pb-12 pt-24">
       <div className="rounded-3xl bg-neutral-950 px-8 py-16 text-white md:px-16 md:py-24">
         <p className="text-sm uppercase tracking-[0.2em] text-neutral-400">Contact</p>
-        <a href="mailto:arefahi26@gmail.com" className="mt-6 block text-4xl font-semibold tracking-[-0.03em] hover:text-neutral-300 md:text-7xl">
+        <a
+          href="mailto:arefahi26@gmail.com"
+          onClick={() => {
+            posthog?.capture('contact_email_clicked', { placement: 'contact_call_to_action' })
+            portfolioLogs.contactEmailRequested('contact_call_to_action')
+          }}
+          className="mt-6 block text-4xl font-semibold tracking-[-0.03em] hover:text-neutral-300 md:text-7xl"
+        >
           Let's work together →
         </a>
         <div className="mt-12 flex flex-wrap gap-6 text-sm text-neutral-400">
-          <a href="mailto:arefahi26@gmail.com" className="hover:text-white">arefahi26@gmail.com</a>
-          <a href="https://www.linkedin.com/in/alirefahi" target="_blank" rel="noreferrer" className="hover:text-white">LinkedIn ↗</a>
-          <a href="/ali-refahi-resume.pdf" download className="hover:text-white">Résumé ↓</a>
+          <a
+            href="mailto:arefahi26@gmail.com"
+            onClick={() => {
+              posthog?.capture('contact_email_clicked', { placement: 'contact_footer' })
+              portfolioLogs.contactEmailRequested('contact_footer')
+            }}
+            className="hover:text-white"
+          >
+            arefahi26@gmail.com
+          </a>
+          <a href="https://www.linkedin.com/in/alirefahi" target="_blank" rel="noreferrer" onClick={() => posthog?.capture('linkedin_profile_opened')} className="hover:text-white">LinkedIn ↗</a>
+          <a
+            href="/ali-refahi-resume.pdf"
+            download
+            onClick={() => {
+              posthog?.capture('resume_downloaded', { placement: 'contact_footer' })
+              portfolioLogs.resumeDownloadRequested('contact_footer')
+            }}
+            className="hover:text-white"
+          >
+            Résumé ↓
+          </a>
         </div>
       </div>
       <p className="mt-8 text-sm text-neutral-400">© {new Date().getFullYear()} Ali Refahi</p>

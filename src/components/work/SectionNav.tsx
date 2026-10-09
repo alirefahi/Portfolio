@@ -1,5 +1,6 @@
 import { useEffect, useState } from 'react'
 import type { Section } from '../../content/types'
+import posthog from '../../posthog'
 
 export default function SectionNav({ sections }: { sections: Section[] }) {
   const [active, setActive] = useState(sections[0]?.id)
@@ -17,7 +18,10 @@ export default function SectionNav({ sections }: { sections: Section[] }) {
         {sections.map((s) => (
           <li key={s.id}>
             <button
-              onClick={() => document.getElementById(s.id)?.scrollIntoView({ behavior: 'smooth' })}
+              onClick={() => {
+                posthog?.capture('case_study_section_selected', { section_id: s.id })
+                document.getElementById(s.id)?.scrollIntoView({ behavior: 'smooth' })
+              }}
               className={active === s.id ? 'font-semibold text-neutral-950' : 'text-neutral-400 hover:text-neutral-700'}
             >
               {s.title}

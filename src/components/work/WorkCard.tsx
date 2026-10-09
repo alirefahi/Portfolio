@@ -1,8 +1,17 @@
 import type { Work } from '../../content/types'
+import posthog from '../../posthog'
+import { portfolioLogs } from '../../posthog-logs'
 
 export default function WorkCard({ c }: { c: Work }) {
   return (
-    <a href={`#/works/${c.slug}`} className="group block">
+    <a
+      href={`#/works/${c.slug}`}
+      onClick={() => {
+        posthog?.capture('work_case_study_opened', { case_study_slug: c.slug })
+        portfolioLogs.caseStudyOpened(c.slug)
+      }}
+      className="group block"
+    >
       <div className="flex aspect-[4/3] items-center justify-center overflow-hidden rounded-3xl bg-neutral-100 text-sm text-neutral-400 transition group-hover:bg-neutral-200">
         TODO: Cover image
       </div>
