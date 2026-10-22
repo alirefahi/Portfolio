@@ -12,7 +12,7 @@ export default function SectionNav({ sections }: { sections: Section[] }) {
     return () => obs.disconnect()
   }, [sections])
   return (
-    <nav className="sticky top-8 hidden md:block">
+    <nav className="sticky top-8 hidden self-start md:block">
       <ul className="space-y-3 text-sm">
         {sections.map((s) => (
           <li key={s.id}>
