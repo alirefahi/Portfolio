@@ -3,6 +3,20 @@
 
 @theme {
   --font-sans: 'Nunito Sans', ui-sans-serif, system-ui, sans-serif;
+
+  /* Warm cream palette: overrides the default grayscale so every existing utility picks it up */
+  --color-white: #fbf8f2;
+  --color-neutral-50: #f7f3ea;
+  --color-neutral-100: #f0ebdf;
+  --color-neutral-200: #e4ddce;
+  --color-neutral-300: #cfc6b4;
+  --color-neutral-400: #7d7364;
+  --color-neutral-500: #6b6254;
+  --color-neutral-600: #564e43;
+  --color-neutral-700: #433c33;
+  --color-neutral-800: #2e2924;
+  --color-neutral-900: #231f1b;
+  --color-neutral-950: #1c1814;
 }
 
 html {
@@ -10,4 +24,9 @@ html {
 }
 body {
   @apply bg-white text-neutral-950 antialiased;
+}
+
+::selection {
+  background: var(--color-neutral-200);
+  color: var(--color-neutral-950);
 }
