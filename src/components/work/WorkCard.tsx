@@ -16,7 +16,7 @@ export default function WorkCard({ c }: { c: Work }) {
             ))}
           </div>
         </div>
-        <span className="text-sm text-neutral-400">{c.year}</span>
+        <span className="shrink-0 text-sm text-neutral-400">{c.year}</span>
       </div>
     </a>
   )

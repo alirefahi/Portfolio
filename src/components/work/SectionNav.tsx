@@ -20,7 +20,7 @@ export default function SectionNav({ sections }: { sections: Section[] }) {
               onClick={() => document.getElementById(s.id)?.scrollIntoView({ behavior: 'smooth' })}
               className={active === s.id ? 'font-semibold text-neutral-950' : 'text-neutral-400 hover:text-neutral-700'}
             >
-              {s.title}
+              {s.nav ?? s.title}
             </button>
           </li>
         ))}

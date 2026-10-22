@@ -1,4 +1,5 @@
 import type { Section, Work } from '../../content/types'
+import ContentBlock from './ContentBlock'
 import Figure from './Figure'
 import MetaRow from './MetaRow'
 import MetricStrip from './MetricStrip'
@@ -13,15 +14,21 @@ window.addEventListener('hashchange', (e) => {
 })
 
 function SectionBlock({ s }: { s: Section }) {
+  let nested = false
   return (
     <section id={s.id} className="scroll-mt-8">
+      {s.eyebrow && <p className="mb-3 text-sm font-medium uppercase tracking-[0.2em] text-neutral-500">{s.eyebrow}</p>}
       <h2 className="text-3xl font-semibold tracking-tight md:text-4xl">{s.title}</h2>
-      {s.body.map((p, i) => <p key={i} className="mt-5 max-w-2xl text-lg leading-relaxed text-neutral-600">{p}</p>)}
-      {s.figures && (
-        <div className={`mt-10 grid gap-6 ${s.figures.length > 1 ? 'sm:grid-cols-2' : ''}`}>
-          {s.figures.map((f, i) => <Figure key={i} f={f} />)}
+      {s.focus && (
+        <div className="mt-5 flex flex-wrap gap-2">
+          {s.focus.map((t) => <span key={t} className="rounded-full border border-neutral-200 px-3 py-1 text-xs text-neutral-600">{t}</span>)}
         </div>
       )}
+      {s.body.map((b, i) => {
+        if (typeof b !== 'string' && b.type === 'heading') nested = true
+        return <ContentBlock key={i} b={b} nested={nested} />
+      })}
+      {s.figures && <ContentBlock b={{ type: 'figures', items: s.figures }} />}
     </section>
   )
 }
