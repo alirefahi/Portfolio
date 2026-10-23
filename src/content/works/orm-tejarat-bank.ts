@@ -1,6 +1,6 @@
 import type { Work } from '../types'
 
-// Figures have no `src` yet: add real project screenshots to replace the placeholders.
+// Section figures remain placeholders until project screenshots are added.
 const work: Work = {
   slug: 'orm-tejarat-bank',
   title: 'ORM: Rebuilding a Bank’s Internal Operations Tool From the Ground Up',
@@ -24,7 +24,7 @@ const work: Work = {
     { value: '~450', label: 'Figma pages' },
     { value: '~150', label: 'Design system components' },
   ],
-  hero: { caption: 'The redesigned ORM: registration, blacklist, and inquiry flows' },
+  hero: { src: '/assets/orm-hero.png', caption: 'The redesigned ORM blacklist management screens', aspect: '2/1' },
   sections: [
     {
       id: 'problem',
