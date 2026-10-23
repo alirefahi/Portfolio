@@ -11,12 +11,17 @@ const work: Work = {
   kind: 'deep',
   role: 'Product Designer, design lead as the team grew',
   team: '3 designers, 2 front-end devs, 4 back-end devs, 1 Product Manager, 1 Product Owner',
-  duration: 'TODO: confirm total duration',
+  duration: 'Ongoing, 1 year 2 months so far (~70% of the product designed)',
   platform: 'Web · Internal banking tool',
   details: [
-    ['Users', 'Branch employees (~1,700 branches), internal product support, anti-money-laundering (AML) unit'],
+    ['Users', 'Branch employees (~1,300 branches, ~10,000 employees), internal product support, anti-money-laundering (AML) unit'],
     ['Tools', 'Figma, FigJam, Confluence'],
     ['Scope', 'Discovery, research, wireframes, UI, prototype, design QA, release'],
+  ],
+  metrics: [
+    { value: '~30', label: 'Flows' },
+    { value: '~450', label: 'Figma pages' },
+    { value: '~150', label: 'Design system components' },
   ],
   hero: { caption: 'The redesigned ORM: registration, blacklist, and inquiry flows' },
   sections: [
@@ -107,7 +112,7 @@ const work: Work = {
       nav: 'One input',
       body: [
         'The customer registration form asked for two things: nationality type and an identification code. While researching, I found that a single input could replace both.',
-        'An Iranian national code and a foreign national’s unified ID are generated with different algorithms and have different lengths, so the system can tell them apart from the value itself. I proposed collecting only the identification code and detecting the type automatically. This removed a field and a potential error from one of the most frequent flows.',
+        'An Iranian national code and a foreign national’s unified ID are generated with different algorithms and have different lengths, so the system can tell them apart from the value itself. I proposed collecting only the identification code and detecting the type automatically. The proposal was accepted, and it removed a field and a potential error from one of the most frequent flows.',
       ],
     },
     {
@@ -177,6 +182,7 @@ const work: Work = {
             'A foundation that can absorb future services without losing its structure',
           ],
         },
+        'The scale of the work so far, with the project still in progress: about 30 flows, 450 Figma pages, and 150 components in the design system.',
       ],
     },
     {
