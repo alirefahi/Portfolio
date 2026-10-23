@@ -3,7 +3,7 @@ import type { Work } from '../types'
 // Figures have no `src` yet: add real project screenshots to replace the placeholders.
 const work: Work = {
   slug: 'orm-tejarat-bank',
-  title: 'ORM: Rebuilding a Bank’s Internal Operations Tool',
+  title: 'ORM: Rebuilding a Bank’s Internal Operations Tool From the Ground Up',
   summary: 'I redesigned Tejarat Bank’s legacy desktop tool for branch operations into a secure, web-based product with a proper design system, a clear information architecture, and an admin layer the bank never had.',
   tags: ['Banking', 'Internal tool', 'Design system'],
   year: 'Tejarat Bank',
@@ -14,6 +14,7 @@ const work: Work = {
   duration: 'Ongoing, 1 year 2 months so far (~70% of the product designed)',
   platform: 'Web · Internal banking tool',
   details: [
+    ['Domain', 'Banking, internal tool'],
     ['Users', 'Branch employees (~1,300 branches, ~10,000 employees), internal product support, anti-money-laundering (AML) unit'],
     ['Tools', 'Figma, FigJam, Confluence'],
     ['Scope', 'Discovery, research, wireframes, UI, prototype, design QA, release'],
@@ -64,6 +65,7 @@ const work: Work = {
       id: 'research',
       title: 'Research with limited access',
       nav: 'Research',
+      eyebrow: 'The journey',
       body: [
         'Competitor analysis wasn’t possible. Products like this aren’t publicly accessible, so there was nothing to evaluate. I worked with the sources I could reach instead:',
         {
@@ -95,7 +97,6 @@ const work: Work = {
         },
         'The trade-off was relearning. Existing users would have to adapt to something new. But a structure that mirrors how employees think about their work, starting with who is standing in front of them, was worth that cost.',
       ],
-      figures: [{ caption: 'Old menu structure vs. new menu structure' }],
     },
     {
       id: 'security',
@@ -133,7 +134,6 @@ const work: Work = {
         },
         'Starting fast and standardizing once we had enough knowledge was a trade-off I’d make again.',
       ],
-      figures: [{ caption: 'Design system overview and key components' }],
     },
     {
       id: 'solution',
@@ -141,20 +141,29 @@ const work: Work = {
       nav: 'Solution',
       body: [
         'Three flows show the shape of the product best.',
+        { type: 'heading', text: 'Individual customer registration', level: 3 },
+        'The streamlined form, with the single identification input, signature confirmation, and clear validation.',
         {
-          type: 'cards',
-          items: [
-            { title: 'Individual customer registration', text: 'The streamlined form, with the single identification input, signature confirmation, and clear validation.' },
-            { title: 'Blacklist', text: 'A tool for managing restricted customers, built for the AML unit’s needs.' },
-            { title: 'Customer and account inquiry', text: 'Fast lookup of a person’s information and accounts, organized so employees get what they need at the counter.' },
-          ],
+          type: 'figures',
+          items: [{ caption: 'Final registration flow, 3 to 4 screens side by side · 2400 × 1350 PNG', aspect: '16/9' }],
+        },
+        { type: 'heading', text: 'Blacklist', level: 3 },
+        'A tool for managing restricted customers, built for the AML unit’s needs.',
+        {
+          type: 'figures',
+          items: [{ caption: 'Blacklist list view plus add/review state, 2 screens · 2400 × 1350 PNG', aspect: '16/9' }],
+        },
+        { type: 'heading', text: 'Customer and account inquiry', level: 3 },
+        'Fast lookup of a person’s information and accounts, organized so employees get what they need at the counter.',
+        {
+          type: 'figures',
+          items: [{ caption: 'Inquiry result screen, annotated with key information groups · 2400 × 1350 PNG', aspect: '16/9' }],
         },
         'Across the product, I introduced a unified UI, standardized components, and a menu structure aligned with standard market patterns, so the experience feels familiar rather than invented.',
       ],
       figures: [
-        { caption: 'Final registration flow' },
-        { caption: 'Blacklist list view and add/review state' },
-        { caption: 'Inquiry result screen, annotated with key information groups' },
+        { caption: 'Old menu structure vs. new menu structure, side by side · 2400 × 1350 PNG', aspect: '16/9' },
+        { caption: 'Design system overview, key components · 2400 × 1350 PNG', aspect: '16/9' },
       ],
     },
     {
@@ -182,7 +191,15 @@ const work: Work = {
             'A foundation that can absorb future services without losing its structure',
           ],
         },
-        'The scale of the work so far, with the project still in progress: about 30 flows, 450 Figma pages, and 150 components in the design system.',
+        'The scale of the work so far, with the project still in progress:',
+        {
+          type: 'list',
+          items: [
+            '~30 flows',
+            '~450 Figma pages',
+            '~150 components in the design system: ~110 adapted from Simple Design System (localized to Persian and resized to fit our needs) and ~40 designed from scratch for ORM',
+          ],
+        },
       ],
     },
     {
