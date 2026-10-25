@@ -37,6 +37,7 @@ export type Work = {
   platform: string
   details?: [label: string, value: string][] // extra MetaRow items
   hero: FigureData
+  cover?: FigureData
   metrics?: Metric[]
   sections: Section[]
 }

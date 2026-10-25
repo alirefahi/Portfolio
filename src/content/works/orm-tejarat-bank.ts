@@ -1,6 +1,6 @@
 import type { Work } from '../types'
 
-// Section figures remain placeholders until project screenshots are added.
+// Remaining figures without a `src` are placeholders for project screenshots.
 const work: Work = {
   slug: 'orm-tejarat-bank',
   title: 'ORM: Rebuilding a Bank’s Internal Operations Tool From the Ground Up',
@@ -24,7 +24,8 @@ const work: Work = {
     { value: '~450', label: 'Figma pages' },
     { value: '~150', label: 'Design system components' },
   ],
-  hero: { src: '/assets/orm-hero.png', caption: 'The redesigned ORM blacklist management screens', aspect: '2/1' },
+  hero: { src: '/assets/orm-hero.png', caption: 'The redesigned ORM: customer accounts and blacklist management', aspect: '2/1' },
+  cover: { src: '/assets/orm-cover.png', caption: 'ORM banking operations tool: customer services and blacklist management' },
   sections: [
     {
       id: 'problem',
@@ -145,19 +146,19 @@ const work: Work = {
         'The streamlined form, with the single identification input, signature confirmation, and clear validation.',
         {
           type: 'figures',
-          items: [{ caption: 'Final registration flow, 3 to 4 screens side by side · 2400 × 1350 PNG', aspect: '16/9' }],
+          items: [{ src: '/assets/orm-registration.png', caption: 'ORM registration flow: account registration, signature verification, and service management', aspect: '2/1' }],
         },
         { type: 'heading', text: 'Blacklist', level: 3 },
         'A tool for managing restricted customers, built for the AML unit’s needs.',
         {
           type: 'figures',
-          items: [{ caption: 'Blacklist list view plus add/review state, 2 screens · 2400 × 1350 PNG', aspect: '16/9' }],
+          items: [{ src: '/assets/orm-blacklist.png', caption: 'ORM blacklist: restricted customer list, review details, and add customer flow', aspect: '2/1' }],
         },
         { type: 'heading', text: 'Customer and account inquiry', level: 3 },
         'Fast lookup of a person’s information and accounts, organized so employees get what they need at the counter.',
         {
           type: 'figures',
-          items: [{ caption: 'Inquiry result screen, annotated with key information groups · 2400 × 1350 PNG', aspect: '16/9' }],
+          items: [{ src: '/assets/orm-inquiry.png', caption: 'ORM customer and account inquiry: customer lookup, account list, and banking service management', aspect: '2/1' }],
         },
         'Across the product, I introduced a unified UI, standardized components, and a menu structure aligned with standard market patterns, so the experience feels familiar rather than invented.',
       ],
