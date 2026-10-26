@@ -48,7 +48,7 @@ function Nav() {
 
 function Hero() {
   return (
-    <section className="mx-auto grid max-w-6xl gap-10 px-6 pb-16 pt-10 md:grid-cols-[1.4fr_1fr] md:items-end md:gap-12 md:pb-24 md:pt-28">
+    <section className="mx-auto grid max-w-6xl gap-10 px-6 pb-6 pt-4 md:grid-cols-[1.4fr_1fr] md:items-end md:gap-12 md:pb-10 md:pt-11">
       <div>
         <p className="mb-6 text-sm font-medium uppercase tracking-[0.2em] text-neutral-500">
           Product Designer · Tehran
@@ -77,7 +77,7 @@ function Hero() {
 
 function Work() {
   return (
-    <section id="work" className="mx-auto max-w-6xl px-6 py-24">
+    <section id="work" className="mx-auto max-w-6xl px-6 py-10">
       <div className="mb-12 flex items-end justify-between border-b border-neutral-200 pb-6">
         <h2 className="text-3xl font-semibold tracking-tight md:text-5xl">Selected work</h2>
         <a href="#/works" className="text-sm font-medium text-neutral-600 hover:text-neutral-950">All works →</a>
