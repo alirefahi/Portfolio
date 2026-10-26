@@ -68,7 +68,7 @@ function Hero() {
           </a>
         </div>
       </div>
-      <div className="aspect-[4/5] w-full max-w-sm justify-self-start overflow-hidden rounded-3xl bg-neutral-100 md:sticky md:top-0 md:w-3/4 md:max-w-none md:self-start md:justify-self-end">
+      <div className="aspect-[4/5] w-4/5 max-w-[19.2rem] justify-self-start overflow-hidden rounded-3xl bg-neutral-100 md:sticky md:top-0 md:w-3/5 md:max-w-none md:self-start md:justify-self-end">
         <img src="/portrait.jpg" alt="Portrait of Ali Refahi" className="h-full w-full object-cover" />
       </div>
     </section>
