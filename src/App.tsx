@@ -51,13 +51,13 @@ function Hero() {
     <section className="mx-auto grid max-w-6xl gap-12 px-6 pb-24 pt-16 md:grid-cols-[1.4fr_1fr] md:items-end md:pt-28">
       <div>
         <p className="mb-6 text-sm font-medium uppercase tracking-[0.2em] text-neutral-500">
-          TODO: Role · Location
+          Product Designer · Tehran
         </p>
         <h1 className="text-5xl font-black leading-[0.95] tracking-[-0.04em] md:text-8xl">
           Designing products people love to use.
         </h1>
         <p className="mt-8 max-w-md text-lg leading-relaxed text-neutral-600">
-          TODO: Short intro — who you are, what you do, and the kind of problems you enjoy solving.
+          Product designer with 4 years in banking and healthtech. I lead a three-person design team and, with a background in front-end and back-end, I design flows that are ready to build.
         </p>
         <div className="mt-10 flex gap-4">
           <a href="#work" className="rounded-full bg-neutral-950 px-6 py-3 text-sm font-medium text-white transition hover:bg-neutral-800">
