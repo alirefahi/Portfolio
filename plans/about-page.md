@@ -16,7 +16,7 @@ Layout uses `max-w-6xl px-6` and the same type scale as AllWorks.
 3. **How I work**: `h2`, plus 3–4 numbered principle cards (01, 02…), each with a TODO title and one line, in a 2-col grid with top borders.
 4. **Experience at a glance**: a `const experience = [{ role, company, period }]` array (3 TODO rows) rendered as a table-like list with `border-b` rows: role · company on the left, period in `text-neutral-400` on the right.
 5. **Tools**: a `const tools = ['Figma', 'FigJam', 'Framer', 'Notion', 'Maze', 'TODO']` array rendered as pill chips (same style as the WorkCard tags).
-6. **Resume link**: driven by `const resumeUrl: string | null = null`. It renders a "Download résumé ↓" pill button (`href={resumeUrl}` with `download`) only when it is non-null. The Contact footer's "TODO: Résumé" link follows the same rule: it's hidden while `resumeUrl` is null and points at the file once Ali supplies it in `public/`.
+6. **Resume link**: driven by `const resumeUrl: string | null = null`. It renders a "Download resume ↓" pill button (`href={resumeUrl}` with `download`) only when it is non-null. The Contact footer's "TODO: resume" link follows the same rule: it's hidden while `resumeUrl` is null and points at the file once Ali supplies it in `public/`.
 
 ## Edge cases
 - Going from `#/about` to home anchors (`#work`, `#contact`) still scrolls through the existing effect.

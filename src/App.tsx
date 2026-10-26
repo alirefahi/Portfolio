@@ -48,18 +48,18 @@ function Nav() {
 
 function Hero() {
   return (
-    <section className="mx-auto grid max-w-6xl gap-12 px-6 pb-24 pt-16 md:grid-cols-[1.4fr_1fr] md:items-end md:pt-28">
+    <section className="mx-auto grid max-w-6xl gap-10 px-6 pb-16 pt-10 md:grid-cols-[1.4fr_1fr] md:items-end md:gap-12 md:pb-24 md:pt-28">
       <div>
         <p className="mb-6 text-sm font-medium uppercase tracking-[0.2em] text-neutral-500">
           Product Designer · Tehran
         </p>
-        <h1 className="font-sans text-[80px] font-black leading-[0.95] tracking-[-0.04em]">
+        <h1 className="break-words font-sans text-[44px] font-black leading-[0.95] tracking-[-0.04em] sm:text-6xl md:text-[80px]">
           A designer who speaks fluent engineering.
         </h1>
-        <p className="mt-8 max-w-md text-[16px] leading-[var(--text-3xl--line-height)] text-neutral-600">
+        <p className="mt-6 max-w-md text-[16px] leading-[var(--text-3xl--line-height)] text-neutral-600 md:mt-8">
           Product designer with 4 years in banking and healthtech. I lead a three-person design team and, with a background in front-end and back-end, I design flows that are ready to build.
         </p>
-        <div className="mt-10 flex gap-4">
+        <div className="mt-8 flex flex-wrap gap-3 sm:gap-4 md:mt-10">
           <a href="#work" className="rounded-full bg-neutral-950 px-6 py-3 text-sm font-medium text-white transition hover:bg-neutral-800">
             View work
           </a>
@@ -68,8 +68,8 @@ function Hero() {
           </a>
         </div>
       </div>
-      <div className="flex aspect-[4/5] items-center justify-center rounded-3xl bg-neutral-100 text-sm text-neutral-400">
-        TODO: Portrait photo
+      <div className="aspect-[4/5] w-full max-w-sm justify-self-start overflow-hidden rounded-3xl bg-neutral-100 md:sticky md:top-0 md:w-3/4 md:max-w-none md:self-start md:justify-self-end">
+        <img src="/portrait.jpg" alt="Portrait of Ali Refahi" className="h-full w-full object-cover" />
       </div>
     </section>
   )
@@ -131,7 +131,7 @@ function AboutPage() {
           </p>
           {resumeUrl && (
             <a href={resumeUrl} download className="mt-10 inline-block rounded-full bg-neutral-950 px-6 py-3 text-sm font-medium text-white transition hover:bg-neutral-800">
-              Download résumé ↓
+              Download resume ↓
             </a>
           )}
         </div>
@@ -197,7 +197,7 @@ function Contact() {
         <div className="mt-12 flex flex-wrap gap-6 text-sm text-neutral-400">
           <a href="mailto:arefahi26@gmail.com" className="hover:text-white">arefahi26@gmail.com</a>
           <a href="https://www.linkedin.com/in/alirefahi" target="_blank" rel="noreferrer" className="hover:text-white">LinkedIn ↗</a>
-          <a href="/ali-refahi-resume.pdf" download className="hover:text-white">Résumé ↓</a>
+          <a href="/ali-refahi-resume.pdf" download className="hover:text-white">resume ↓</a>
         </div>
       </div>
       <p className="mt-8 text-sm text-neutral-400">© {new Date().getFullYear()} Ali Refahi</p>
