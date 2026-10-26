@@ -53,10 +53,10 @@ function Hero() {
         <p className="mb-6 text-sm font-medium uppercase tracking-[0.2em] text-neutral-500">
           Product Designer · Tehran
         </p>
-        <h1 className="text-5xl font-black leading-[0.95] tracking-[-0.04em] md:text-8xl">
-          Designing products people love to use.
+        <h1 className="font-sans text-[80px] font-black leading-[0.95] tracking-[-0.04em]">
+          A designer who speaks fluent engineering.
         </h1>
-        <p className="mt-8 max-w-md text-lg leading-relaxed text-neutral-600">
+        <p className="mt-8 max-w-md text-[16px] leading-[var(--text-3xl--line-height)] text-neutral-600">
           Product designer with 4 years in banking and healthtech. I lead a three-person design team and, with a background in front-end and back-end, I design flows that are ready to build.
         </p>
         <div className="mt-10 flex gap-4">
