@@ -18,7 +18,7 @@ const work: Work = {
     ['Design approach', 'Discovery, research, interaction design, UI, prototyping, design system and design review'],
     ['Device priority', 'Mobile-first, with equal strategic importance for mobile and desktop'],
   ],
-  hero: { caption: 'The redesigned Tejarat Internet Bank on desktop and mobile' },
+  hero: { src: '/assets/tejarat-internet-bank-hero.png', aspect: '2/1', caption: 'The redesigned Tejarat Internet Bank on desktop and mobile' },
   sections: [
     {
       id: 'overview',
@@ -109,7 +109,7 @@ const work: Work = {
           ],
         },
         'The design aimed to help customers make an informed choice instead of requiring them to understand every transfer method before starting.',
-        { type: 'figures', items: [{ caption: 'The unified transfer form and the available transfer methods' }] },
+        { type: 'figures', items: [{ src: '/assets/tejarat-internet-bank-transfers.png', aspect: '16/9', caption: 'The unified transfer form and the available transfer methods' }] },
         { type: 'heading', text: 'Constraints and trade-offs' },
         'Not every ideal capability was available. Technical limitations prevented certain conversions between card, Sheba, and account identifiers. The source account also had to remain on the first screen.',
         'The bank’s service costs affected the flow as well. Beneficiary-name lookup was moved to a later stage to reduce paid service calls.',
