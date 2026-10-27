@@ -30,3 +30,16 @@ body {
   background: var(--color-neutral-200);
   color: var(--color-neutral-950);
 }
+
+/* Reusable entrance animation: set --i on an element to stagger by 0.1s per step */
+@keyframes fade-up {
+  from { opacity: 0; transform: translateY(12px); }
+  to { opacity: 1; transform: none; }
+}
+.fade-up {
+  animation: fade-up 0.7s ease-out both;
+  animation-delay: calc(var(--i, 0) * 0.1s);
+}
+@media (prefers-reduced-motion: reduce) {
+  .fade-up { animation: none; }
+}

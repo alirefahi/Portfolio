@@ -54,12 +54,14 @@ function Hero() {
           Product Designer · Tehran
         </p>
         <h1 className="break-words font-sans text-[44px] font-black leading-[0.76] tracking-[-0.04em] sm:text-6xl md:text-[80px]">
-          A designer who speaks fluent engineering.
+          <span className="fade-up block" style={{ '--i': 0 } as React.CSSProperties}>A designer</span>
+          <span className="fade-up block" style={{ '--i': 1 } as React.CSSProperties}>who speaks fluent</span>
+          <span className="fade-up block" style={{ '--i': 2 } as React.CSSProperties}>engineering.</span>
         </h1>
-        <p className="mt-6 max-w-md text-[16px] leading-[var(--text-3xl--line-height)] text-neutral-600 md:mt-8">
+        <p style={{ '--i': 3 } as React.CSSProperties} className="fade-up mt-6 max-w-md text-[16px] leading-[var(--text-3xl--line-height)] text-neutral-600 md:mt-8">
           Product designer with 4 years in banking and healthtech. I lead a three-person design team and, with a background in front-end and back-end, I design flows that are ready to build.
         </p>
-        <div className="mt-8 flex flex-wrap gap-3 sm:gap-4 md:mt-10">
+        <div style={{ '--i': 4 } as React.CSSProperties} className="fade-up mt-8 flex flex-wrap gap-3 sm:gap-4 md:mt-10">
           <a href="#work" className="rounded-full bg-neutral-950 px-6 py-3 text-sm font-medium text-white transition hover:bg-neutral-800">
             View work
           </a>
