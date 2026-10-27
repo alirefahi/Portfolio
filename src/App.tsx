@@ -248,7 +248,9 @@ function AboutPage() {
             About me
           </h1>
           <p className="mt-8 max-w-xl text-2xl leading-snug tracking-tight text-neutral-700">
-            TODO: Who Ali is — background, focus, and what drives the work.
+            Product designer with 4 years in banking and healthtech. I lead a
+            three-person design team and, with a background in front-end and
+            back-end, I design flows that are ready to build.
           </p>
           {resumeUrl && (
             <a
@@ -260,8 +262,12 @@ function AboutPage() {
             </a>
           )}
         </div>
-        <div className="flex aspect-[4/5] items-center justify-center rounded-3xl bg-neutral-100 text-sm text-neutral-400">
-          TODO: Portrait photo
+        <div className="aspect-[4/5] w-4/5 max-w-[19.2rem] justify-self-start overflow-hidden rounded-3xl bg-neutral-100 md:sticky md:top-0 md:w-3/5 md:max-w-none md:self-start md:justify-self-end lg:w-[calc((min(100vw,72rem)-6rem)/4)] lg:shrink-0">
+          <img
+            src="/portrait.jpg"
+            alt="Portrait of Ali Refahi"
+            className="h-full w-full object-cover"
+          />
         </div>
       </div>
 
