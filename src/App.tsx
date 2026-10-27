@@ -4,6 +4,7 @@ import { useEffect, useState } from 'react'
 
 import { works as caseStudies } from './content/works'
 import WorkCard from './components/work/WorkCard'
+import AvailabilityBadge from './components/AvailabilityBadge'
 import WorkDetail from './pages/WorkDetail'
 
 function useRoute() {
@@ -34,9 +35,14 @@ function AllWorks() {
 function Nav() {
   return (
     <header className="mx-auto flex max-w-6xl items-center justify-between px-6 py-6">
-      <a href="#" className="text-lg font-semibold tracking-tight">
-        Ali Refahi
-      </a>
+      <div className="flex items-center gap-4">
+        <a href="#" className="text-lg font-semibold tracking-tight">
+          Ali Refahi
+        </a>
+        <div className="hidden md:block">
+          <AvailabilityBadge />
+        </div>
+      </div>
       <nav className="flex gap-8 text-sm text-neutral-600">
         <a href="#/works" className="hover:text-neutral-950">Works</a>
         <a href="#/about" className="hover:text-neutral-950">About</a>
