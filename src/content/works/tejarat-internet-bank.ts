@@ -4,6 +4,7 @@ import type { Work } from '../types'
 const work: Work = {
   slug: 'tejarat-internet-bank',
   title: 'Tejarat Internet Bank',
+  cover: { src: '/assets/tejarat-internet-bank-cover.png', caption: 'Tejarat Internet Banking dashboard and transactions' },
   summary: 'Redesigning a complex banking experience for individual and corporate customers.',
   tags: ['Fintech', 'Product design', 'Design system'],
   year: '2023 — Present',

@@ -54,17 +54,17 @@ function Nav() {
 
 function Hero() {
   return (
-    <section className="mx-auto grid max-w-6xl gap-10 px-6 pb-6 pt-4 md:grid-cols-[1.4fr_1fr] md:items-end md:gap-12 md:pb-10 md:pt-11">
-      <div>
+    <section className="mx-auto grid max-w-6xl gap-10 px-6 pb-6 pt-4 md:grid-cols-[1.4fr_1fr] md:items-end md:gap-12 md:pb-10 md:pt-11 lg:flex lg:items-start lg:justify-between lg:gap-16">
+      <div className="lg:min-w-0 lg:flex-1">
         <p className="mb-6 text-sm font-medium uppercase tracking-[0.2em] text-neutral-500">
           Product Designer · Tehran
         </p>
-        <h1 className="break-words font-sans text-[44px] font-black leading-[0.76] tracking-[-0.04em] sm:text-6xl md:text-[80px]">
-          <span className="fade-up block" style={{ '--i': 0 } as React.CSSProperties}>A designer</span>
-          <span className="fade-up block" style={{ '--i': 1 } as React.CSSProperties}>who speaks fluent</span>
-          <span className="fade-up block" style={{ '--i': 2 } as React.CSSProperties}>engineering.</span>
+        <h1 className="break-words font-sans text-[44px] font-black leading-[1.05] tracking-[-0.03em] sm:text-6xl md:text-[80px] lg:whitespace-nowrap lg:text-[clamp(3.5rem,6vw,5.5rem)]">
+          <span className="fade-up inline-block lg:block" style={{ '--i': 0 } as React.CSSProperties}>A designer who</span>{' '}
+          <span className="fade-up inline-block lg:block" style={{ '--i': 1 } as React.CSSProperties}>speaks fluent</span>{' '}
+          <span className="fade-up inline-block lg:block" style={{ '--i': 2 } as React.CSSProperties}>engineering.</span>
         </h1>
-        <p style={{ '--i': 3 } as React.CSSProperties} className="fade-up mt-6 max-w-md text-[16px] leading-[var(--text-3xl--line-height)] text-neutral-600 md:mt-8">
+        <p style={{ '--i': 3 } as React.CSSProperties} className="fade-up mt-6 max-w-[54ch] text-[16px] leading-[var(--text-3xl--line-height)] text-neutral-600 md:mt-8">
           Product designer with 4 years in banking and healthtech. I lead a three-person design team and, with a background in front-end and back-end, I design flows that are ready to build.
         </p>
         <div style={{ '--i': 4 } as React.CSSProperties} className="fade-up mt-8 flex flex-wrap gap-3 sm:gap-4 md:mt-10">
@@ -76,7 +76,7 @@ function Hero() {
           </a>
         </div>
       </div>
-      <div className="aspect-[4/5] w-4/5 max-w-[19.2rem] justify-self-start overflow-hidden rounded-3xl bg-neutral-100 md:sticky md:top-0 md:w-3/5 md:max-w-none md:self-start md:justify-self-end">
+      <div className="aspect-[4/5] w-4/5 max-w-[19.2rem] justify-self-start overflow-hidden rounded-3xl bg-neutral-100 md:sticky md:top-0 md:w-3/5 md:max-w-none md:self-start md:justify-self-end lg:w-[calc((min(100vw,72rem)-6rem)/4)] lg:shrink-0">
         <img src="/portrait.jpg" alt="Portrait of Ali Refahi" className="h-full w-full object-cover" />
       </div>
     </section>
