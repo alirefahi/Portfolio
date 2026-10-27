@@ -53,7 +53,7 @@ function Hero() {
         <p className="mb-6 text-sm font-medium uppercase tracking-[0.2em] text-neutral-500">
           Product Designer · Tehran
         </p>
-        <h1 className="break-words font-sans text-[44px] font-black leading-[0.95] tracking-[-0.04em] sm:text-6xl md:text-[80px]">
+        <h1 className="break-words font-sans text-[44px] font-black leading-[0.76] tracking-[-0.04em] sm:text-6xl md:text-[80px]">
           A designer who speaks fluent engineering.
         </h1>
         <p className="mt-6 max-w-md text-[16px] leading-[var(--text-3xl--line-height)] text-neutral-600 md:mt-8">
