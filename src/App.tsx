@@ -58,7 +58,7 @@ function Nav() {
         <a href="#/about" className="hover:text-neutral-950">
           About
         </a>
-        <a href="#contact" className="hover:text-neutral-950">
+        <a href="#/contact" className="hover:text-neutral-950">
           Contact
         </a>
       </nav>
@@ -355,9 +355,8 @@ function AboutPage() {
   )
 }
 
-function Contact() {
+function ContactCard() {
   return (
-    <footer id="contact" className="mx-auto max-w-6xl px-6 pb-12 pt-24">
       <div className="rounded-3xl bg-neutral-950 px-8 py-16 text-white md:px-16 md:py-24">
         <p className="text-sm uppercase tracking-[0.2em] text-neutral-400">
           Contact
@@ -389,10 +388,34 @@ function Contact() {
           </a>
         </div>
       </div>
+  )
+}
+
+function Contact() {
+  return (
+    <footer id="contact" className="mx-auto max-w-6xl px-6 pb-12 pt-24">
+      <ContactCard />
       <p className="mt-8 text-sm text-neutral-400">
         © {new Date().getFullYear()} Ali Refahi
       </p>
     </footer>
+  )
+}
+
+function ContactPage() {
+  return (
+    <section className="mx-auto max-w-6xl px-6 pb-12 pt-16 md:pt-24">
+      <a href="#" className="text-sm text-neutral-500 hover:text-neutral-950">
+        ← Back home
+      </a>
+      <h1 className="mb-12 mt-6 text-5xl font-semibold leading-[0.95] tracking-[-0.04em] md:text-8xl">
+        Contact
+      </h1>
+      <ContactCard />
+      <p className="mt-8 text-sm text-neutral-400">
+        © {new Date().getFullYear()} Ali Refahi
+      </p>
+    </section>
   )
 }
 
@@ -403,7 +426,8 @@ export default function App() {
     : null
   const isAllWorks = !detailSlug && hash.startsWith("#/works")
   const isAbout = hash.startsWith("#/about")
-  const isPage = !!detailSlug || isAllWorks || isAbout
+  const isContact = hash.startsWith("#/contact")
+  const isPage = !!detailSlug || isAllWorks || isAbout || isContact
 
   // Remember scroll per route so Back returns to the same spot.
   useEffect(() => {
@@ -429,6 +453,8 @@ export default function App() {
         <AllWorks />
       ) : isAbout ? (
         <AboutPage />
+      ) : isContact ? (
+        <ContactPage />
       ) : (
         <>
           <Hero />
@@ -436,7 +462,7 @@ export default function App() {
           <About />
         </>
       )}
-      <Contact />
+      {!isContact && <Contact />}
     </main>
   )
 }
