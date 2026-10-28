@@ -73,7 +73,7 @@ function Hero() {
         <p className="mb-6 text-sm font-medium uppercase tracking-[0.2em] text-neutral-500">
           Product Designer · Tehran
         </p>
-        <h1 className="break-words font-sans text-[44px] font-black leading-[1.05] tracking-[-0.03em] sm:text-6xl md:text-[80px] lg:whitespace-nowrap lg:text-[clamp(3.5rem,6vw,5.5rem)]">
+        <h1 className="break-words font-sans text-[44px] font-black leading-[0.945] tracking-[-0.03em] sm:text-6xl sm:leading-[0.945] md:text-[80px] md:leading-[0.945] lg:whitespace-nowrap lg:text-[clamp(3.5rem,6vw,5.5rem)] lg:leading-[0.945]">
           <span
             className="fade-up inline-block lg:block"
             style={{ "--i": 0 } as React.CSSProperties}
