@@ -137,8 +137,9 @@ const work: Work = {
           type: "figures",
           items: [
             {
-              caption: "Patient record, desktop · 2400 × 1350 PNG",
-              aspect: "16/9",
+              src: "/assets/docsplain-patient-record.png",
+              caption: "Patient record summary and care elements",
+              aspect: "2/1",
             },
           ],
         },
