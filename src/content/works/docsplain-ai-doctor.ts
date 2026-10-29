@@ -167,8 +167,9 @@ const work: Work = {
           type: "figures",
           items: [
             {
-              caption: "Admin panel, desktop · 2400 × 1350 PNG",
-              aspect: "16/9",
+              src: "/assets/docsplain-admin-panel.png",
+              caption: "Admin panel: patient recall management and staff scheduling settings",
+              aspect: "2/1",
             },
           ],
         },
@@ -176,9 +177,9 @@ const work: Work = {
           type: "figures",
           items: [
             {
-              caption:
-                "Integrations with other EMRs and labs, 2 screens side by side · 2400 × 1350 PNG",
-              aspect: "16/9",
+              src: "/assets/docsplain-referrals.png",
+              caption: "Specialist referrals configuration, preview and tracking details",
+              aspect: "2/1",
             },
           ],
         },
