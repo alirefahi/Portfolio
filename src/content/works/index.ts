@@ -6,5 +6,5 @@ import four from './case-study-four'
 import five from './case-study-five'
 import six from './case-study-six'
 
-export const works = [tejarat, orm, docsplain, three, four, five, six]
+export const works = [tejarat, docsplain, orm, three, four, five, six]
 export const getWork = (slug: string) => works.find((w) => w.slug === slug)
