@@ -4,6 +4,7 @@ import tailwindcss from '@tailwindcss/vite'
 import path from 'node:path'
 
 import siteConfiguration from './.figma/make/site.json'
+import { works } from './src/content/works'
 
 
 // Vite config — https://vitejs.dev/config/
@@ -20,6 +21,17 @@ export default defineConfig(({ mode }) => {
     plugins: [
 react(),
       tailwindcss(),
+      {
+        name: 'static-route-pages',
+        enforce: 'post',
+        generateBundle(_, bundle) {
+          const index = bundle['index.html']
+          if (!index || index.type !== 'asset') return
+          for (const route of ['works', 'about', 'contact', ...works.map((work) => `works/${work.slug}`)]) {
+            this.emitFile({ type: 'asset', fileName: `${route}/index.html`, source: index.source })
+          }
+        },
+      },
       figmaSiteConfiguration(siteConfiguration),
       figmaErrorOverlayReplay(),
       figmaReactRefreshBoundaryFallback(),

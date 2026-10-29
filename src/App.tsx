@@ -1,26 +1,17 @@
 // Sections are plain components so they can move to Next.js App Router
 // (app/page.tsx + components/*) without changes.
-import { useEffect, useState } from "react"
+import { useEffect } from "react"
+import { useRoute } from "./routing"
 
 import { works as caseStudies } from "./content/works"
 import WorkCard from "./components/work/WorkCard"
 import AvailabilityBadge from "./components/AvailabilityBadge"
 import WorkDetail from "./pages/WorkDetail"
 
-function useRoute() {
-  const [hash, setHash] = useState(() => window.location.hash)
-  useEffect(() => {
-    const onChange = () => setHash(window.location.hash)
-    window.addEventListener("hashchange", onChange)
-    return () => window.removeEventListener("hashchange", onChange)
-  }, [])
-  return hash
-}
-
 function AllWorks() {
   return (
     <section className="mx-auto max-w-6xl px-6 pb-24 pt-16 md:pt-24">
-      <a href="#" className="text-sm text-neutral-500 hover:text-neutral-950">
+      <a href="/" className="text-sm text-neutral-500 hover:text-neutral-950">
         ← Back home
       </a>
       <div className="mb-12 mt-6 flex items-end justify-between border-b border-neutral-200 pb-6">
@@ -44,7 +35,7 @@ function Nav() {
   return (
     <header className="mx-auto flex max-w-6xl items-center justify-between px-6 py-6">
       <div className="flex items-center gap-4">
-        <a href="#" className="text-lg font-semibold tracking-tight">
+        <a href="/" className="text-lg font-semibold tracking-tight">
           Ali Refahi
         </a>
         <div className="hidden md:block">
@@ -52,13 +43,13 @@ function Nav() {
         </div>
       </div>
       <nav className="flex gap-8 text-sm text-neutral-600">
-        <a href="#/works" className="hover:text-neutral-950">
+        <a href="/works" className="hover:text-neutral-950">
           Works
         </a>
-        <a href="#/about" className="hover:text-neutral-950">
+        <a href="/about" className="hover:text-neutral-950">
           About
         </a>
-        <a href="#/contact" className="hover:text-neutral-950">
+        <a href="/contact" className="hover:text-neutral-950">
           Contact
         </a>
       </nav>
@@ -106,13 +97,17 @@ function Hero() {
           className="fade-up mt-8 flex flex-wrap gap-3 sm:gap-4 md:mt-10"
         >
           <a
-            href="#work"
+            href="/"
+            onClick={(event) => {
+              event.preventDefault()
+              document.getElementById("work")?.scrollIntoView({ behavior: "smooth" })
+            }}
             className="rounded-full bg-neutral-950 px-6 py-3 text-sm font-medium text-white transition hover:bg-neutral-800"
           >
             View work
           </a>
           <a
-            href="#contact"
+            href="/contact"
             className="rounded-full border border-neutral-300 px-6 py-3 text-sm font-medium transition hover:border-neutral-950"
           >
             Get in touch
@@ -138,7 +133,7 @@ function Work() {
           Selected work
         </h2>
         <a
-          href="#/works"
+          href="/works"
           className="text-sm font-medium text-neutral-600 hover:text-neutral-950"
         >
           All works →
@@ -239,7 +234,7 @@ const tools = [
 function AboutPage() {
   return (
     <section className="mx-auto max-w-6xl px-6 pb-24 pt-16 md:pt-24">
-      <a href="#" className="text-sm text-neutral-500 hover:text-neutral-950">
+      <a href="/" className="text-sm text-neutral-500 hover:text-neutral-950">
         ← Back home
       </a>
       <div className="mt-6 grid gap-12 border-b border-neutral-200 pb-16 md:grid-cols-[1.4fr_1fr] md:items-end">
@@ -405,7 +400,7 @@ function Contact() {
 function ContactPage() {
   return (
     <section className="mx-auto max-w-6xl px-6 pb-12 pt-16 md:pt-24">
-      <a href="#" className="text-sm text-neutral-500 hover:text-neutral-950">
+      <a href="/" className="text-sm text-neutral-500 hover:text-neutral-950">
         ← Back home
       </a>
       <h1 className="mb-12 mt-6 text-5xl font-semibold leading-[0.95] tracking-[-0.04em] md:text-8xl">
@@ -420,29 +415,24 @@ function ContactPage() {
 }
 
 export default function App() {
-  const hash = useRoute()
-  const detailSlug = hash.startsWith("#/works/")
-    ? hash.slice("#/works/".length)
+  const route = useRoute()
+  const detailSlug = route.startsWith("/works/")
+    ? route.slice("/works/".length)
     : null
-  const isAllWorks = !detailSlug && hash.startsWith("#/works")
-  const isAbout = hash.startsWith("#/about")
-  const isContact = hash.startsWith("#/contact")
-  const isPage = !!detailSlug || isAllWorks || isAbout || isContact
+  const isAllWorks = route === "/works"
+  const isAbout = route === "/about"
+  const isContact = route === "/contact"
 
   // Remember scroll per route so Back returns to the same spot.
   useEffect(() => {
     if ("scrollRestoration" in history) history.scrollRestoration = "manual"
-    const key = `scroll:${hash || "#"}`
+    const key = `scroll:${route}`
     const saved = sessionStorage.getItem(key)
-    if (isPage || !hash || hash === "#") {
-      window.scrollTo(0, saved ? Number(saved) : 0)
-    } else {
-      document.getElementById(hash.slice(1))?.scrollIntoView()
-    }
+    window.scrollTo(0, saved ? Number(saved) : 0)
     const save = () => sessionStorage.setItem(key, String(window.scrollY))
     window.addEventListener("scroll", save, { passive: true })
     return () => window.removeEventListener("scroll", save)
-  }, [hash, isPage])
+  }, [route])
 
   return (
     <main>

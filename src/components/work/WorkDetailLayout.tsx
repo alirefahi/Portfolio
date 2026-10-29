@@ -5,13 +5,7 @@ import MetaRow from './MetaRow'
 import MetricStrip from './MetricStrip'
 import NextPrevProject from './NextPrevProject'
 import SectionNav from './SectionNav'
-
-// Remember the last non-detail page so the back link returns there.
-let origin = '#/works'
-window.addEventListener('hashchange', (e) => {
-  const prev = new URL(e.oldURL).hash
-  if (!prev.startsWith('#/works/')) origin = prev.startsWith('#/works') ? '#/works' : '#'
-})
+import { getDetailOrigin } from '../../routing'
 
 function SectionBlock({ s }: { s: Section }) {
   let nested = false
@@ -34,10 +28,11 @@ function SectionBlock({ s }: { s: Section }) {
 }
 
 export default function WorkDetailLayout({ w }: { w: Work }) {
+  const origin = getDetailOrigin()
   const deep = w.kind === 'deep'
   return (
     <article className="mx-auto max-w-6xl px-6 pb-24 pt-16 md:pt-24">
-      <a href={origin} className="text-sm text-neutral-500 hover:text-neutral-950">{origin === '#' ? '← Back home' : '← All works'}</a>
+      <a href={origin} className="text-sm text-neutral-500 hover:text-neutral-950">{origin === '/' ? '← Back home' : '← All works'}</a>
       <div className="mt-6 flex flex-wrap gap-2">
         {w.tags.map((t) => <span key={t} className="rounded-full border border-neutral-200 px-3 py-1 text-xs text-neutral-600">{t}</span>)}
         <span className="px-1 py-1 text-xs text-neutral-400">{w.year}</span>
