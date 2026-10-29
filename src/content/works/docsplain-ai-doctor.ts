@@ -23,9 +23,10 @@ const work: Work = {
     caption: "Docsplain AI Doctor EMR: patient chart and appointment management",
   },
   hero: {
+    src: "/assets/docsplain-hero.png",
     caption:
-      "The doctor's main workspace with an AI-generated visit note · 2400 × 1350 PNG",
-    aspect: "16/9",
+      "The doctor's main workspace with an AI-generated visit note and patient portal screens",
+    aspect: "2/1",
   },
   sections: [
     {
@@ -126,8 +127,9 @@ const work: Work = {
           type: "figures",
           items: [
             {
-              caption: "Scheduling view, desktop · 2400 × 1350 PNG",
-              aspect: "16/9",
+              src: "/assets/docsplain-scheduling.png",
+              caption: "Appointment scheduling and booking the next appointment",
+              aspect: "2/1",
             },
           ],
         },
