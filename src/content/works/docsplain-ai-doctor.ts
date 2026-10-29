@@ -18,6 +18,10 @@ const work: Work = {
     ["Domain", "Healthtech, EMR"],
     ["Tools", "Figma, Fluent 2 design system"],
   ],
+  cover: {
+    src: "/assets/docsplain-cover.png",
+    caption: "Docsplain AI Doctor EMR: patient chart and appointment management",
+  },
   hero: {
     caption:
       "The doctor's main workspace with an AI-generated visit note · 2400 × 1350 PNG",
