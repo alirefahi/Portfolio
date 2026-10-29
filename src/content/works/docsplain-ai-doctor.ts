@@ -147,9 +147,9 @@ const work: Work = {
           type: "figures",
           items: [
             {
-              caption:
-                "Visit note with AI-generated summary, desktop · 2400 × 1350 PNG",
-              aspect: "16/9",
+              src: "/assets/docsplain-visit-note.png",
+              caption: "Video consultation and AI-assisted visit notes",
+              aspect: "2/1",
             },
           ],
         },
@@ -157,9 +157,9 @@ const work: Work = {
           type: "figures",
           items: [
             {
-              caption:
-                "Diseases, medications and lab tests, 3 screens side by side · 2400 × 1350 PNG",
-              aspect: "16/9",
+              src: "/assets/docsplain-medications-labs.png",
+              caption: "Medications, prescriptions and lab test results tracking",
+              aspect: "2/1",
             },
           ],
         },
