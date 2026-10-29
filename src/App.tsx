@@ -119,11 +119,11 @@ function Hero() {
           </a>
         </div>
       </div>
-      <div className="aspect-square w-4/5 max-w-xs justify-self-start overflow-hidden rounded-3xl bg-neutral-100 md:sticky md:top-0 md:w-3/4 md:max-w-none md:self-start md:justify-self-end lg:w-[calc((min(100vw,72rem)-6rem)/3.5)] lg:shrink-0">
+      <div className="flex w-4/5 max-w-xs items-center justify-center justify-self-start overflow-hidden rounded-3xl bg-neutral-100 p-3 shadow-inner md:sticky md:top-0 md:w-3/4 md:max-w-none md:self-start md:justify-self-end lg:w-[calc((min(100vw,72rem)-6rem)/3.5)] lg:shrink-0">
         <img
-          src="/portrait.jpg"
-          alt="Portrait of Ali Refahi"
-          className="h-full w-full object-cover"
+          src="/tejarat-mobile-app.png"
+          alt="Tejarat Mobile Banking App UI"
+          className="max-h-[380px] w-auto object-contain drop-shadow-md sm:max-h-[440px]"
         />
       </div>
     </section>
