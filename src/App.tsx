@@ -144,6 +144,7 @@ function Work() {
       <div className="grid gap-10 md:grid-cols-2">
         {caseStudies
           .filter((c) => c.featured)
+          .slice(0, 4)
           .map((c) => (
             <WorkCard key={c.slug} c={c} />
           ))}
