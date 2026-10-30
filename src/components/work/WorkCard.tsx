@@ -6,7 +6,9 @@ export default function WorkCard({ c }: { c: Work }) {
       <div className="flex aspect-[4/3] items-center justify-center overflow-hidden rounded-3xl bg-neutral-100 text-sm text-neutral-400 transition group-hover:bg-neutral-200">
         {c.cover?.src ? (
           <img src={c.cover.src} alt={c.cover.caption ?? c.title} className="h-full w-full object-contain" />
-        ) : 'TODO: Cover image'}
+        ) : (
+          <span className="px-6 text-center">{c.cover?.caption ?? 'TODO: Cover image'}</span>
+        )}
       </div>
       <div className="mt-5 flex items-start justify-between gap-4">
         <div>
