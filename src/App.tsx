@@ -100,7 +100,9 @@ function Hero() {
             href="/"
             onClick={(event) => {
               event.preventDefault()
-              document.getElementById("work")?.scrollIntoView({ behavior: "smooth" })
+              document
+                .getElementById("work")
+                ?.scrollIntoView({ behavior: "smooth" })
             }}
             className="rounded-full bg-neutral-950 px-6 py-3 text-sm font-medium text-white transition hover:bg-neutral-800"
           >
@@ -130,7 +132,7 @@ function Work() {
     <section id="work" className="mx-auto max-w-6xl px-6 py-10">
       <div className="mb-12 flex items-end justify-between border-b border-neutral-200 pb-6">
         <h2 className="text-3xl font-semibold tracking-tight md:text-5xl">
-          Selected work
+          Selected works
         </h2>
         <a
           href="/works"
@@ -207,16 +209,16 @@ const experience: {
 
 const principles = [
   {
-    title: "Start with people",
-    body: "TODO: How research and empathy shape your work.",
+    title: "01 — Understand before designing",
+    body: "I start by understanding the problem, the people experiencing it, and the context around it. Research, empathy, and critical thinking help me uncover the real needs behind the request.",
   },
   {
-    title: "Prototype early",
-    body: "TODO: How you test ideas quickly and learn.",
+    title: "02 — Think in systems, design in iterations",
+    body: "I break down complex problems, explore different approaches, and prototype early. I believe in learning through collaboration, testing assumptions, and refining ideas along the way.",
   },
   {
-    title: "Sweat the details",
-    body: "TODO: How craft and polish fit your process.",
+    title: "03 — Balance the big picture and the details",
+    body: "Great design goes beyond how things look. I care about usability, consistency, and the details that make products feel intuitive, while balancing user needs, business goals, and technical realities.",
   },
 ]
 
@@ -273,7 +275,6 @@ function AboutPage() {
         <div className="grid gap-8 sm:grid-cols-3">
           {principles.map((p, i) => (
             <div key={p.title}>
-              <span className="text-sm text-neutral-400">0{i + 1}</span>
               <h3 className="mt-2 text-lg font-semibold tracking-tight">
                 {p.title}
               </h3>
@@ -352,37 +353,33 @@ function AboutPage() {
 
 function ContactCard() {
   return (
-      <div className="rounded-3xl bg-neutral-950 px-8 py-16 text-white md:px-16 md:py-24">
-        <p className="text-sm uppercase tracking-[0.2em] text-neutral-400">
-          Contact
-        </p>
-        <a
-          href="mailto:arefahi26@gmail.com"
-          className="mt-6 block text-4xl font-semibold tracking-[-0.03em] hover:text-neutral-300 md:text-7xl"
-        >
-          Let's work together →
+    <div className="rounded-3xl bg-neutral-950 px-8 py-16 text-white md:px-16 md:py-24">
+      <p className="text-sm uppercase tracking-[0.2em] text-neutral-400">
+        Contact
+      </p>
+      <a
+        href="mailto:arefahi26@gmail.com"
+        className="mt-6 block text-4xl font-semibold tracking-[-0.03em] hover:text-neutral-300 md:text-7xl"
+      >
+        Let's work together →
+      </a>
+      <div className="mt-12 flex flex-wrap gap-6 text-sm text-neutral-400">
+        <a href="mailto:arefahi26@gmail.com" className="hover:text-white">
+          arefahi26@gmail.com
         </a>
-        <div className="mt-12 flex flex-wrap gap-6 text-sm text-neutral-400">
-          <a href="mailto:arefahi26@gmail.com" className="hover:text-white">
-            arefahi26@gmail.com
-          </a>
-          <a
-            href="https://www.linkedin.com/in/alirefahi"
-            target="_blank"
-            rel="noreferrer"
-            className="hover:text-white"
-          >
-            LinkedIn ↗
-          </a>
-          <a
-            href="/ali-refahi-resume.pdf"
-            download
-            className="hover:text-white"
-          >
-            resume ↓
-          </a>
-        </div>
+        <a
+          href="https://www.linkedin.com/in/alirefahi"
+          target="_blank"
+          rel="noreferrer"
+          className="hover:text-white"
+        >
+          LinkedIn ↗
+        </a>
+        <a href="/ali-refahi-resume.pdf" download className="hover:text-white">
+          resume ↓
+        </a>
       </div>
+    </div>
   )
 }
 
