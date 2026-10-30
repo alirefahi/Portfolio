@@ -3,12 +3,13 @@ import type { Work } from '../../content/types'
 export default function WorkCard({ c }: { c: Work }) {
   return (
     <a href={`/works/${c.slug}`} className="group block">
-      <div className="flex aspect-[4/3] items-center justify-center overflow-hidden rounded-3xl bg-neutral-100 text-sm text-neutral-400 transition group-hover:bg-neutral-200">
+      <div className="relative flex aspect-[4/3] items-center justify-center overflow-hidden rounded-3xl bg-neutral-100 text-sm text-neutral-400 transition group-hover:bg-neutral-200">
         {c.cover?.src ? (
           <img src={c.cover.src} alt={c.cover.caption ?? c.title} className="h-full w-full object-contain" />
         ) : (
           <span className="px-6 text-center">{c.cover?.caption ?? 'TODO: Cover image'}</span>
         )}
+        <div aria-hidden className="pointer-events-none absolute inset-0 rounded-3xl shadow-[inset_0_0_0_4px_#d4d4d4]" />
       </div>
       <div className="mt-5 flex items-start justify-between gap-4">
         <div>

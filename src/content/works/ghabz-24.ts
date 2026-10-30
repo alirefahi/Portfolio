@@ -20,6 +20,7 @@ const work: Work = {
     ['Tools', 'Figma'],
   ],
   cover: {
+    src: '/assets/ghabz-24-cover.png',
     caption: 'Insert: Ghabz 24 mobile home and bill inquiry interface, 2000 × 1500 PNG',
   },
   hero: {
