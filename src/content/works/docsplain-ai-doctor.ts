@@ -167,8 +167,8 @@ const work: Work = {
           type: "figures",
           items: [
             {
-              src: "/assets/docsplain-admin-panel.png",
-              caption: "Admin panel: patient recall management and staff scheduling settings",
+              src: "/assets/docsplain-messaging.png",
+              caption: "Internal messaging, ticketing and clinical team coordination",
               aspect: "2/1",
             },
           ],
@@ -178,18 +178,8 @@ const work: Work = {
           items: [
             {
               src: "/assets/docsplain-referrals.png",
-              caption: "Specialist referrals configuration, preview and tracking details",
+              caption: "Specialist referrals, diagnostic imaging integrations, and tracking details",
               aspect: "2/1",
-            },
-          ],
-        },
-        {
-          type: "figures",
-          items: [
-            {
-              caption:
-                "Mobile web views of the main flows, 3 screens side by side · 2400 × 1350 PNG",
-              aspect: "16/9",
             },
           ],
         },
@@ -222,9 +212,10 @@ const work: Work = {
       ],
       figures: [
         {
+          src: "/assets/docsplain-regulation-reports.png",
           caption:
-            "Access-level settings and a log or report screen, 2 screens side by side · 2400 × 1350 PNG",
-          aspect: "16/9",
+            "Access-level settings and query reports configured for regulation compliance",
+          aspect: "2/1",
         },
       ],
     },
