@@ -186,26 +186,26 @@ const experience: {
   {
     role: "Product Designer",
     company: "SabaPardazesh PJS Co.",
-    years: "Sep 2023 — Present",
-    duration: "2 yrs 11 mos",
+    years: "Sep 2023 - Present",
+    duration: "3 yrs 2 mos",
   },
   {
     role: "UI/UX Designer",
     company: "Freelance",
-    years: "Feb 2022 — Jun 2023",
-    duration: "1 yr 4 mos",
+    years: "Jan 2022 - Dec 2023",
+    duration: "2 yrs",
   },
   {
     role: "UI/UX Designer",
     company: "Doctop",
-    years: "Jul 2021 — Jan 2022",
-    duration: "7 mos",
+    years: "Apr 2021 - Mar 2022",
+    duration: "1 yrs",
   },
   {
     role: "UI/UX Designer",
     company: "The Dexign Studio · Internship",
-    years: "Jan 2021 — Apr 2021",
-    duration: "4 mos",
+    years: "Jan 2021 - Mar 2021",
+    duration: "3 mos",
   },
 ]
 
