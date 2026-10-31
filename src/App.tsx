@@ -88,9 +88,12 @@ function Hero() {
           style={{ "--i": 3 } as React.CSSProperties}
           className="fade-up mt-6 max-w-[54ch] text-[16px] leading-[var(--text-3xl--line-height)] text-neutral-600 md:mt-8"
         >
-          Product designer with 4 years in banking and healthtech. I lead a
-          three-person design team and, with a background in front-end and
-          back-end, I design flows that are ready to build.
+          Product Designer with 5+ years of experience across fintech and
+          healthtech. Owns end-to-end UX for complex banking workflows, from
+          research and information architecture through to developer handoff.
+          Experience includes building a design system adopted across multiple
+          squads, running usability testing, and partnering with backend and
+          security teams to balance compliance requirements with usability.{" "}
         </p>
         <div
           style={{ "--i": 4 } as React.CSSProperties}
@@ -245,10 +248,13 @@ function AboutPage() {
           <h1 className="text-5xl font-semibold leading-[0.95] tracking-[-0.04em] md:text-8xl">
             About me
           </h1>
-          <p className="mt-8 max-w-xl text-2xl leading-snug tracking-tight text-neutral-700">
-            Product designer with 4 years in banking and healthtech. I lead a
-            three-person design team and, with a background in front-end and
-            back-end, I design flows that are ready to build.
+          <p className="mt-8 max-w-xl text-lg leading-snug tracking-tight text-neutral-700">
+            Product Designer with 5+ years of experience across fintech and
+            healthtech. Owns end-to-end UX for complex banking workflows, from
+            research and information architecture through to developer handoff.
+            Experience includes building a design system adopted across multiple
+            squads, running usability testing, and partnering with backend and
+            security teams to balance compliance requirements with usability.
           </p>
           {resumeUrl && (
             <a

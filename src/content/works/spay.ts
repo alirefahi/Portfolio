@@ -20,6 +20,7 @@ const work: Work = {
     ['Tools', 'Figma'],
   ],
   cover: {
+    src: '/assets/spay-cover.png',
     caption: 'Insert: SPay merchant panel dashboard overview, 2000 × 1500 PNG',
   },
   hero: {
