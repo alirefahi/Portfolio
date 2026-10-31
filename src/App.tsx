@@ -88,12 +88,10 @@ function Hero() {
           style={{ "--i": 3 } as React.CSSProperties}
           className="fade-up mt-6 max-w-[54ch] text-[16px] leading-[var(--text-3xl--line-height)] text-neutral-600 md:mt-8"
         >
-          Product Designer with 5+ years of experience across fintech and
-          healthtech. Owns end-to-end UX for complex banking workflows, from
-          research and information architecture through to developer handoff.
-          Experience includes building a design system adopted across multiple
-          squads, running usability testing, and partnering with backend and
-          security teams to balance compliance requirements with usability.{" "}
+          Product Designer with 5+ years in fintech and healthtech. Owns
+          end-to-end UX for complex banking workflows, from research to
+          developer handoff. Builds design systems and works with tech teams to
+          balance compliance with usability.
         </p>
         <div
           style={{ "--i": 4 } as React.CSSProperties}
