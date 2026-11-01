@@ -24,7 +24,8 @@ const work: Work = {
     caption: 'Insert: SPay merchant panel dashboard overview, 2000 × 1500 PNG',
   },
   hero: {
-    caption: 'Insert: SPay desktop merchant panel — dashboard and main workflows, 2400 × 1200 PNG',
+    src: '/assets/spay-hero.png',
+    caption: 'SPay merchant panel: desktop onboarding and merchant store setup flows',
     aspect: '2/1',
   },
   sections: [
@@ -78,12 +79,13 @@ const work: Work = {
         'Field research confirmed that business owners perform bookkeeping, financial reconciliation, and deep operational setup on desktop and laptop computers.',
         'To ensure engineering bandwidth was spent on high-impact value, I deliberately kept features with poor mobile ergonomics and high build cost desktop-only. This eliminated expensive responsive compromises and allowed our team to ship a robust, dependable management workspace much faster.',
       ],
-      figures: [
-        {
-          caption: 'Insert: Dashboard / main panel — shows the desktop-first layout, 2400 × 1350 PNG',
-          aspect: '16/9',
-        },
-      ],
+    figures: [
+      {
+        src: '/assets/spay-dashboard.png',
+        caption: 'SPay main dashboard: merchant onboarding steps, daily transactions, gateway balance, and annual revenue analytics',
+        aspect: '2/1',
+      },
+    ],
     },
     {
       id: 'key-flow',
@@ -94,12 +96,13 @@ const work: Work = {
         'I structured the onboarding process into clear progressive steps, showing required documentation and regulatory verification status upfront to avoid unexpected delays.',
         'Once verified, merchants can generate static or dynamic payment links with custom descriptions, fixed or variable amounts, and instant QR codes ready to share with customers via messaging or social channels.',
       ],
-      figures: [
-        {
-          caption: 'Insert: Key flow — the main user journey from onboarding to payment link creation, 2400 × 1350 PNG',
-          aspect: '16/9',
-        },
-      ],
+    figures: [
+      {
+        src: '/assets/spay-key-flow.png',
+        caption: 'SPay merchant contact and store location onboarding step across desktop and mobile',
+        aspect: '2/1',
+      },
+    ],
     },
     {
       id: 'core-screen',
@@ -111,7 +114,8 @@ const work: Work = {
       ],
       figures: [
         {
-          caption: 'Insert: Another core screen — shows depth of the panel with settlement and transaction management, 2400 × 1350 PNG',
+          src: '/assets/spay-panel-depth.png',
+          caption: 'SPay new gateway request form: desktop and mobile layouts',
           aspect: '16/9',
         },
       ],

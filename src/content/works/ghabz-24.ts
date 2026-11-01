@@ -24,7 +24,8 @@ const work: Work = {
     caption: 'Insert: Ghabz 24 mobile home and bill inquiry interface, 2000 × 1500 PNG',
   },
   hero: {
-    caption: 'Insert: Ghabz 24 mobile app alongside responsive web bill payment interface, 2400 × 1200 PNG',
+    src: '/assets/ghabz-24-hero.png',
+    caption: 'Ghabz 24 mobile app onboarding, registration, and OTP verification flow',
     aspect: '2/1',
   },
   sections: [
@@ -49,13 +50,14 @@ const work: Work = {
         'Designed mobile-first from the start, because the mobile app and mobile site were the overwhelming priority for our users. Most people check and pay bills the moment they receive an SMS notification or a paper invoice, making handheld devices the primary touchpoint.',
         'Prioritizing mobile forced absolute clarity in information hierarchy: key numbers, bill amounts, due dates, and payment statuses are visible at a glance without unnecessary interaction layers.',
       ],
-      figures: [
-        {
-          caption: 'Insert: Mobile home / bill list screen — first impression of the product, 1200 × 1600 PNG',
-          aspect: '4/3',
-        },
-      ],
-    },
+    figures: [
+      {
+        src: '/assets/ghabz-24-responsive.png',
+        caption: 'Ghabz 24 desktop web interface and companion mobile application overview',
+        aspect: '2/1',
+      },
+    ],
+  },
     {
       id: 'process',
       title: 'End-to-end design ownership',
@@ -93,13 +95,14 @@ const work: Work = {
         'I designed multiple inquiry methods to accommodate how users hold their bill data—direct bill ID/payment ID entry, phone number lookup for mobile and fixed lines, and barcode scanning using the device camera.',
         'Before triggering the payment gateway, users see a clear summary breakdown: utility provider badge, billing period, consumer name, and due date. Once paid, the receipt is immediately shareable and stored in local history.',
       ],
-      figures: [
-        {
-          caption: 'Insert: Bill inquiry and payment flow — shows the core user journey, 2400 × 1350 PNG',
-          aspect: '16/9',
-        },
-      ],
-    },
+    figures: [
+      {
+        src: '/assets/ghabz-24-inquiry-flow.png',
+        caption: 'Vehicle traffic fine inquiry, saved plates list, and itemized violation ticket payment flow on mobile',
+        aspect: '2/1',
+      },
+    ],
+  },
     {
       id: 'web-adaptation',
       title: 'Adapting the design beyond mobile',
@@ -108,13 +111,14 @@ const work: Work = {
         'While mobile was the priority, the website needed to feel equally native on desktop screens for users managing multiple household or business bills.',
         'Rather than stretching the mobile cards across wide monitors, I adapted the layout into a clean multi-column desktop dashboard. Users can manage saved bills in bulk, filter by utility category, view payment history tables, and perform single or batch bill inquiries side by side.',
       ],
-      figures: [
-        {
-          caption: 'Insert: Website version — shows how the design adapts beyond mobile, 2400 × 1350 PNG',
-          aspect: '16/9',
-        },
-      ],
-    },
+    figures: [
+      {
+        src: '/assets/ghabz-24-wallet.png',
+        caption: 'Ghabz 24 wallet balance, top-up/withdrawal actions, and transaction history on desktop and mobile',
+        aspect: '2/1',
+      },
+    ],
+  },
     {
       id: 'outcome',
       title: 'Outcome and handoff',

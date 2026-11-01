@@ -247,12 +247,12 @@ function AboutPage() {
             About me
           </h1>
           <p className="mt-8 max-w-xl text-lg leading-snug tracking-tight text-neutral-700">
-            Product Designer with 5+ years of experience across fintech and
-            healthtech. Owns end-to-end UX for complex banking workflows, from
-            research and information architecture through to developer handoff.
-            Experience includes building a design system adopted across multiple
-            squads, running usability testing, and partnering with backend and
-            security teams to balance compliance requirements with usability.
+            Product Designer with 5+ years across fintech and healthtech. Owns
+            end-to-end UX for banking workflows, from research and information
+            architecture through developer handoff. Experience includes building
+            a design system from scratch, localizing a design system for
+            RTL/Persian, running usability testing, and partnering with
+            engineering and product to balance compliance with usability.
           </p>
           {resumeUrl && (
             <a
@@ -319,15 +319,7 @@ function AboutPage() {
                       height={12}
                     />
                   </a>
-                ) : (
-                  <img
-                    src="/assets/dcf7d.svg"
-                    alt=""
-                    width={16}
-                    height={12}
-                    className="opacity-40"
-                  />
-                )}
+                ) : null}
               </span>
               <span className="text-sm italic text-neutral-500">
                 {e.years} · {e.duration}

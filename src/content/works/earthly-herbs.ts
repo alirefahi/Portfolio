@@ -27,10 +27,11 @@ const work: Work = {
   ],
   cover: {
     src: '/assets/earthly-herbs-cover.png',
-    caption: 'Insert: Earthly Herbs landing page hero and brand feel, 2000 × 1500 PNG',
+    caption: 'Earthly Herbs landing page hero and brand feel',
   },
   hero: {
-    caption: 'Insert: Landing page — first impression and brand feel, 2400 × 1200 PNG',
+    src: '/assets/earthly-herbs-hero.png',
+    caption: 'Landing page and featured product showcases for Earthly Herbs',
     aspect: '2/1',
   },
   sections: [
@@ -83,12 +84,6 @@ const work: Work = {
         'Early in discovery, we made a pivotal strategic decision with stakeholders: product photos must come first. Rather than designing generic card grids and forcing studio photography into arbitrary boxes later, the site layout and the photography art direction were designed in tandem.',
         'We established strict guidelines for imagery: photo counts per SKU, lighting conditions (warm, natural diffused daylight), angle consistency, macro texture shots of loose herbs, and in-context brewing rituals. Every layout decision was built around letting the imagery lead the customer journey.',
       ],
-      figures: [
-        {
-          caption: 'Insert: Photography guidelines — supporting the photo-first strategy, conditions, counts, and art direction, 2400 × 1350 PNG',
-          aspect: '16/9',
-        },
-      ],
     },
     {
       id: 'landing-page',
@@ -100,8 +95,9 @@ const work: Work = {
       ],
       figures: [
         {
-          caption: 'Insert: Landing page — first impression and brand feel, 2400 × 1350 PNG',
-          aspect: '16/9',
+          src: '/assets/earthly-herbs-landing.png',
+          caption: 'Earthly Herbs landing page — responsive desktop and mobile store experience',
+          aspect: '2/1',
         },
       ],
     },
@@ -115,8 +111,9 @@ const work: Work = {
       ],
       figures: [
         {
-          caption: 'Insert: Product page — shows how the photos lead the layout, 2400 × 1350 PNG',
-          aspect: '16/9',
+          src: '/assets/earthly-herbs-pdp.png',
+          caption: 'Product detail page (PDP) — tactile tea photography anchors desktop and mobile layouts',
+          aspect: '2/1',
         },
       ],
     },
@@ -130,8 +127,9 @@ const work: Work = {
       ],
       figures: [
         {
-          caption: 'Insert: Product listing / shop page — shows the store experience, 2400 × 1350 PNG',
-          aspect: '16/9',
+          src: '/assets/earthly-herbs-catalog.png',
+          caption: 'Catalog, cart, and checkout flow across desktop and mobile screens',
+          aspect: '2/1',
         },
       ],
     },
