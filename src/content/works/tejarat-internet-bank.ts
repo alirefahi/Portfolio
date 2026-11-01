@@ -3,7 +3,7 @@ import type { Work } from '../types'
 // Figures have no `src` yet: add real project screenshots to replace the placeholders.
 const work: Work = {
   slug: 'tejarat-internet-bank',
-  title: 'Tejarat Internet Bank',
+  title: 'Tejarat Internet Banking',
   cover: { src: '/assets/tejarat-internet-bank-cover.png', caption: 'Tejarat Internet Banking dashboard and transactions' },
   summary: 'Redesigning a complex banking experience for individual and corporate customers.',
   tags: ['Fintech', 'Product design', 'Design system'],
@@ -18,14 +18,14 @@ const work: Work = {
     ['Design approach', 'Discovery, research, interaction design, UI, prototyping, design system and design review'],
     ['Device priority', 'Mobile-first, with equal strategic importance for mobile and desktop'],
   ],
-  hero: { src: '/assets/tejarat-internet-bank-hero.png', aspect: '2/1', caption: 'The redesigned Tejarat Internet Bank on desktop and mobile' },
+  hero: { src: '/assets/tejarat-internet-bank-hero.png', aspect: '2/1', caption: 'The redesigned Tejarat Internet Banking on desktop and mobile' },
   sections: [
     {
       id: 'overview',
       title: 'Project overview',
       nav: 'Overview',
       body: [
-        'Tejarat Internet Bank was a redesign initiative to replace an outdated internet banking experience with a more modern, accessible, and user-centered product.',
+        'Tejarat Internet Banking was a redesign initiative to replace an outdated internet banking experience with a more modern, accessible, and user-centered product.',
         'The previous version, known as Internet Bank Generation 3, had not been meaningfully updated for a long time. Its experience had become inconsistent, services were difficult to discover, and users often had to navigate separate sections to complete related banking tasks.',
         'The redesign aimed to establish a more coherent experience while supporting the bank’s strategic shift toward individual customers, without losing the needs of corporate customers.',
       ],
@@ -131,13 +131,8 @@ const work: Work = {
         'The previous dashboard relied on predefined shortcuts and did not sufficiently accommodate the different needs of individual and corporate customers. Important information and services were spread across the navigation, and customers had to enter other sections to access their accounts and perform common tasks.',
         'The bank wanted the dashboard to become a more useful starting point: customers should be able to reach their goals in approximately two or three clicks, then leave once their task was complete.',
         'The redesign therefore needed to improve access to key services while supporting different customer groups and creating a more distinctive experience from the previous generation.',
-        {
-          type: 'figures',
-          items: [
-            { caption: 'Before: the Internet Bank Generation 3 dashboard', aspect: '4/3' },
-            { caption: 'After: the redesigned dashboard', aspect: '4/3' },
-          ],
-        },
+        { type: 'figures', items: [{ src: '/assets/tejarat-internet-bank-gen3-dashboard.png', caption: 'Before: the Internet Bank Generation 3 dashboard', aspect: '16/9' }] },
+        { type: 'figures', items: [{ src: '/assets/tejarat-internet-bank-individual-dashboard.png', caption: 'After: the redesigned dashboard', aspect: '16/9' }] },
         { type: 'heading', text: 'Designing for two customer groups' },
         'The dashboard experience differed according to customer type.',
         {
@@ -148,13 +143,8 @@ const work: Work = {
           ],
         },
         'The distinction reflected the different jobs customers needed to complete rather than treating all customers as a single audience.',
-        {
-          type: 'figures',
-          items: [
-            { caption: 'Individual customer dashboard', aspect: '4/3' },
-            { caption: 'Corporate customer dashboard', aspect: '4/3' },
-          ],
-        },
+        { type: 'figures', items: [{ src: '/assets/tejarat-internet-bank-individual-dashboard.png', caption: 'Individual customer dashboard', aspect: '16/9' }] },
+        { type: 'figures', items: [{ src: '/assets/tejarat-internet-bank-corporate-dashboard.png', caption: 'Corporate customer dashboard', aspect: '16/9' }] },
         { type: 'heading', text: 'Bringing accounts and actions into the dashboard' },
         'In the previous version, customers could not see their list of accounts directly on the dashboard and had to navigate through the menu.',
         'The new dashboard brought accounts and their balances into a more accessible location. Each account could also expose shortcuts to relevant services, including services that required an account as an input.',
@@ -213,7 +203,7 @@ const work: Work = {
         'The wider product structure, service categorization, and many interaction flows were developed in collaboration with the team and bank stakeholders.',
         'This distinction matters because the work involved both system-level design decisions and individual service experiences. The design system provided a foundation for consistency, while each service still had to accommodate its own requirements and technical limitations.',
       ],
-      figures: [{ caption: 'Design system foundations: typography, color, and core components' }],
+      figures: [{ src: '/assets/tejarat-internet-bank-design-system.png', caption: 'Design system foundations: typography and color', aspect: '16/9' }],
     },
     {
       id: 'constraints',

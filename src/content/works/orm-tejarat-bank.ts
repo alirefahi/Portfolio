@@ -3,8 +3,7 @@ import type { Work } from "../types"
 // Remaining figures without a `src` are placeholders for project screenshots.
 const work: Work = {
   slug: "orm-tejarat-bank",
-  title: "ORM",
-  // title: 'ORM: Rebuilding a Bank’s Internal Operations Tool From the Ground Up',
+  title: "Tejarat Internal Branch-operations",
   summary:
     "I redesigned Tejarat Bank’s legacy desktop tool for branch operations into a secure, web-based product with a proper design system, a clear information architecture, and an admin layer the bank never had.",
   tags: ["Banking", "Internal tool", "Design system"],
@@ -226,17 +225,6 @@ const work: Work = {
           ],
         },
         "Across the product, I introduced a unified UI, standardized components, and a menu structure aligned with standard market patterns, so the experience feels familiar rather than invented.",
-      ],
-      figures: [
-        {
-          caption:
-            "Old menu structure vs. new menu structure, side by side · 2400 × 1350 PNG",
-          aspect: "16/9",
-        },
-        {
-          caption: "Design system overview, key components · 2400 × 1350 PNG",
-          aspect: "16/9",
-        },
       ],
     },
     {
